@@ -1,4 +1,4 @@
-import { PLAYLISTS } from "../config/playlists";
+import { PLAYLISTS } from "../config/Playlists";
 import { YOUTUBE_CONFIG } from "../config/youtube";
 
 const API_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
