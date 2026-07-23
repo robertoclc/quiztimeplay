@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/categorias.css";
+
+import { getPlaylists } from "../services/playlists";
+
+const playlists = await getPlaylists();
+---
+
+<Layout title="Categorias | QuizTimePlay">
+
+<Header />
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="badge">
+
+                📚 Explore por Categoria
+
+            </span>
+
+            <h1>
+
+                Escolha seu próximo desafio
+
+            </h1>
+
+            <p>
+
+                Navegue pelas categorias oficiais do QuizTimePlay e
+                encontre rapidamente os quizzes do assunto que você mais gosta.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="categories">
+
+    <div class="container">
+
+        <div class="categories-grid">
+
+            {
+
+                playlists.map((playlist) => (
+
+                    <a
+
+                        href={playlist.playlistUrl}
+
+                        target="_blank"
+
+                        class="category-card"
+
+                    >
+
+                        <img
+
+                            src={playlist.thumbnail}
+
+                            alt={playlist.title}
+
+                            class="playlist-thumb"
+
+                            loading="lazy"
+
+                        />
+
+                        <div class="card-content">
+
+                            <div class="icon">
+
+                                {playlist.icon}
+
+                            </div>
+
+                            <h2>
+
+                                {playlist.title}
+
+                            </h2>
+
+                            <p>
+
+                                {playlist.description}
+
+                            </p>
+
+                            <span class="explore">
+
+                                ▶ Explorar Playlist
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                ))
+
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<Footer />
+
+</Layout>

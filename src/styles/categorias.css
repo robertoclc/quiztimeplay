@@ -1,0 +1,203 @@
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    padding:80px 0;
+
+    background:
+        radial-gradient(circle at top right,#3b82f633 0%,transparent 35%),
+        linear-gradient(135deg,#0f172a,#1e3a8a);
+
+}
+
+.hero-content{
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    color:#dbeafe;
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.categories{
+
+    padding:80px 0;
+
+}
+
+.categories-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.category-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    background:#1e293b;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.22);
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#3b82f6;
+
+    box-shadow:0 25px 45px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+   THUMBNAIL
+========================================== */
+
+.playlist-thumb{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.category-card:hover .playlist-thumb{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================
+   CONTEÚDO
+========================================== */
+
+.card-content{
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.icon{
+
+    font-size:46px;
+
+    margin-bottom:18px;
+
+}
+
+.card-content h2{
+
+    font-size:28px;
+
+    color:white;
+
+    margin-bottom:18px;
+
+}
+
+.card-content p{
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+    font-size:18px;
+
+    flex:1;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
+   BOTÃO
+========================================== */
+
+.explore{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:12px;
+
+    padding:16px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.category-card:hover .explore{
+
+    background:#3b82f6;
+
+}

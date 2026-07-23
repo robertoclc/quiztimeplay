@@ -1,0 +1,143 @@
+---
+interface Props {
+
+    title: string;
+
+    thumbnail: string;
+
+    category: string;
+
+    duration: string;
+
+    publishedAt: string;
+
+    url: string;
+
+}
+
+const {
+
+    title,
+
+    thumbnail,
+
+    category,
+
+    duration,
+
+    publishedAt,
+
+    url
+
+} = Astro.props;
+
+const publishedDate = new Date(publishedAt);
+
+const today = new Date();
+
+const diffDays = Math.floor(
+
+    (today.getTime() - publishedDate.getTime()) /
+
+    (1000 * 60 * 60 * 24)
+
+);
+
+const isNew = diffDays <= 7;
+
+let friendlyDate = "";
+
+if (diffDays === 0) {
+
+    friendlyDate = "Hoje";
+
+} else if (diffDays === 1) {
+
+    friendlyDate = "Ontem";
+
+} else if (diffDays < 7) {
+
+    friendlyDate = `Há ${diffDays} dias`;
+
+} else if (diffDays < 30) {
+
+    const weeks = Math.floor(diffDays / 7);
+
+    friendlyDate = `Há ${weeks} semana${weeks > 1 ? "s" : ""}`;
+
+} else if (diffDays < 365) {
+
+    const months = Math.floor(diffDays / 30);
+
+    friendlyDate = `Há ${months} ${months === 1 ? "mês" : "meses"}`;
+
+} else {
+
+    const years = Math.floor(diffDays / 365);
+
+    friendlyDate = `Há ${years} ano${years > 1 ? "s" : ""}`;
+
+}
+---
+
+<a class="video-card" href={url} target="_blank">
+
+    <div class="thumb">
+
+        <img
+            src={thumbnail}
+            alt={title}
+            loading="lazy"
+        />
+
+        {
+
+            isNew && (
+
+                <span class="badge new">
+
+                    🆕 NOVO
+
+                </span>
+
+            )
+
+        }
+
+        <span class="video-duration">
+
+            {duration}
+
+        </span>
+
+    </div>
+
+    <div class="info">
+
+        <span class="category">
+
+            {category}
+
+        </span>
+
+        <h3>
+
+            {title}
+
+        </h3>
+
+        <div class="video-date">
+
+            📅 {friendlyDate}
+
+        </div>
+
+        <button class="watch-button">
+
+            ▶ Assistir no YouTube
+
+        </button>
+
+    </div>
+
+</a>

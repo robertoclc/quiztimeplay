@@ -1,0 +1,49 @@
+/* ==========================================
+   BUSCA
+========================================== */
+
+.search-box{
+
+    margin:35px 0 45px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#1e293b;
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    outline:none;
+
+    transition:.30s;
+
+    border:2px solid transparent;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.search-box input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.search-box input:focus{
+
+    border-color:#3b82f6;
+
+    box-shadow:0 0 0 5px rgba(59,130,246,.15);
+
+}

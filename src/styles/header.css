@@ -1,0 +1,77 @@
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(17,24,39,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    box-shadow:0 3px 15px rgba(0,0,0,.25);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:82px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:#60a5fa;
+    font-size:34px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.logo:hover{
+    color:#ffffff;
+}
+
+.logo img{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.menu a{
+    position:relative;
+    color:#dbeafe;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.menu a:hover{
+    color:#ffffff;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    border-radius:20px;
+    background:#3b82f6;
+    transition:.25s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}

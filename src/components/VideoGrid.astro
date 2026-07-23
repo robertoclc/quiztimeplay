@@ -1,0 +1,55 @@
+---
+import VideoCard from "./VideoCard.astro";
+
+interface Video {
+
+    title: string;
+
+    thumbnail: string;
+
+    category: string;
+
+    duration: string;
+
+    publishedAt: string;
+
+    url: string;
+
+}
+
+interface Props {
+
+    videos: Video[];
+
+}
+
+const { videos }: Props = Astro.props;
+---
+
+<div class="video-grid">
+
+{
+
+videos.map((video: Video) => (
+
+<VideoCard
+
+title={video.title}
+
+thumbnail={video.thumbnail}
+
+category={video.category}
+
+duration={video.duration}
+
+publishedAt={video.publishedAt}
+
+url={video.url}
+
+/>
+
+))
+
+}
+
+</div>

@@ -1,0 +1,140 @@
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <a href="/" class="logo">
+
+                <img src="/logo.png" alt="QuizTimePlay Logo" />
+
+                <span>QuizTimePlay</span>
+
+            </a>
+
+            <div class="menu">
+
+                <a href="/">Início</a>
+
+                <a href="/#quizzes">Quizzes</a>
+
+                <a href="/categorias">Categorias</a>
+
+                <a href="/ranking">Ranking</a>
+
+                <a href="/contato">Contato</a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<style>
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    backdrop-filter:blur(12px);
+    background:rgba(15,23,42,.92);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav{
+    height:82px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+    color:white;
+    font-size:30px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.logo img{
+    width:56px;
+    height:56px;
+    object-fit:contain;
+}
+
+.logo:hover{
+    transform:scale(1.03);
+}
+
+.logo span{
+    color:#60a5fa;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.menu a{
+    color:#dbeafe;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.25s;
+    position:relative;
+}
+
+.menu a:hover{
+    color:white;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    background:#3b82f6;
+    transition:.25s;
+    border-radius:20px;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+@media(max-width:850px){
+
+    nav{
+        flex-direction:column;
+        justify-content:center;
+        height:auto;
+        padding:20px 0;
+    }
+
+    .menu{
+        margin-top:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .logo img{
+        width:48px;
+        height:48px;
+    }
+
+}
+
+</style>

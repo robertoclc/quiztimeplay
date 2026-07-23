@@ -1,0 +1,82 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
+
+/* ==========================================
+   SEÇÕES
+========================================== */
+
+section{
+    padding:70px 0;
+}
+
+.section-title,
+section h2{
+    font-size:42px;
+    margin-bottom:35px;
+    font-weight:bold;
+}
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+.btn{
+    display:inline-block;
+    padding:18px 40px;
+    border-radius:14px;
+    background:#2563eb;
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.btn-secondary{
+    display:inline-block;
+    padding:18px 40px;
+    border-radius:14px;
+    border:2px solid rgba(255,255,255,.25);
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:#2563eb;
+}

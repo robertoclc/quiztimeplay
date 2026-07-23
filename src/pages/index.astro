@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import VideoGrid from "../components/VideoGrid.astro";
+import { getHomeContent } from "../services/youtube";
+
+const { videos, shorts } = await getHomeContent();
+---
+
+<Layout
+    title="QuizTimePlay | Quizzes de História, Futebol, Ciências e Conhecimentos Gerais"
+    description="Teste seus conhecimentos com centenas de quizzes gratuitos sobre História, Futebol, Ciências, Música, Cultura Pop, Geografia, Bíblia e muito mais. Assista diretamente no YouTube."
+>
+
+<Header />
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="badge">
+                🏆 Novo vídeo toda semana
+            </span>
+
+            <h1>
+                O maior canal de quizzes do Brasil está aqui.
+            </h1>
+
+            <p>
+                Teste seus conhecimentos em História, Futebol,
+                Filmes, Geografia, Bíblia, Ciências e muito mais.
+                Escolha um desafio e descubra até onde você consegue chegar.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#quizzes" class="btn">
+                    ▶ Assistir Quizzes
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@QuizTime-Tc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-secondary">
+
+                    📺 Inscrever-se
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div class="stat-card">
+                <strong>12</strong>
+                <span>Últimos vídeos</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>+3000</strong>
+                <span>Perguntas</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>100%</strong>
+                <span>Diversão</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="quizzes">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            🔥 Últimos Quizzes
+        </h2>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchVideos"
+                placeholder="🔍 Pesquise um quiz..."
+            />
+
+        </div>
+
+        <VideoGrid videos={videos} />
+
+    </div>
+
+</section>
+
+<section id="shorts">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            ⚡ Shorts
+        </h2>
+
+        <VideoGrid videos={shorts} />
+
+    </div>
+
+</section>
+
+<Footer />
+
+<script is:inline>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const input = document.getElementById("searchVideos");
+
+    if (!(input instanceof HTMLInputElement)) return;
+
+    input.addEventListener("input", () => {
+
+        const texto = input.value.toLowerCase().trim();
+
+        document.querySelectorAll(".video-card").forEach((card) => {
+
+            if (!(card instanceof HTMLElement)) return;
+
+            const titulo =
+                card.querySelector("h3")?.textContent?.toLowerCase() ?? "";
+
+            card.style.display =
+                titulo.includes(texto)
+                    ? "flex"
+                    : "none";
+
+        });
+
+    });
+
+});
+
+</script>
+
+</Layout>
