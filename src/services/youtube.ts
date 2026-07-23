@@ -1,5 +1,5 @@
 import { YOUTUBE_CONFIG } from "../config/youtube";
-import type { YouTubeVideo } from "../types/youtube";
+import type { YouTubeVideo } from "../types/Typesold/youtube";
 
 const PLAYLIST_API =
     "https://www.googleapis.com/youtube/v3/playlistItems";
