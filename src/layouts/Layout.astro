@@ -9,75 +9,43 @@ import "../styles/search.css";
 import "../styles/responsive.css";
 
 interface Props {
-
     title?: string;
-
     description?: string;
-
 }
 
 const {
-
     title = "QuizTimePlay",
-
     description = "QuizTimePlay - O maior canal de quizzes do Brasil."
-
 } = Astro.props;
 
 const site = "https://quiztimeplay.com.br";
-
 const image = `${site}/logo.png`;
 
 const schema = {
-
     "@context": "https://schema.org",
-
     "@graph": [
-
         {
-
             "@type": "WebSite",
-
             "@id": `${site}/#website`,
-
             url: site,
-
             name: "QuizTimePlay",
-
             description,
-
             inLanguage: "pt-BR"
-
         },
-
         {
-
             "@type": "Organization",
-
             "@id": `${site}/#organization`,
-
             name: "QuizTimePlay",
-
             url: site,
-
             logo: {
-
                 "@type": "ImageObject",
-
                 url: image
-
             },
-
             sameAs: [
-
                 "https://www.youtube.com/@QuizTime-Tc"
-
             ]
-
         }
-
     ]
-
 };
 ---
 
@@ -98,6 +66,8 @@ const schema = {
 <meta name="author" content="QuizTimePlay" />
 
 <meta name="robots" content="index,follow" />
+
+<meta name="google-site-verification" content="kbk5Idx4C7-Z77nymncvDol62zAoq6suu3uttSplxB4" />
 
 <meta name="keywords" content="quiz, quizzes, conhecimentos gerais, futebol, história, ciência, música, cultura pop" />
 
