@@ -2,9 +2,10 @@
    RESPONSIVIDADE GERAL
 =========================================================== */
 
-/* ===========================
+
+/* ===========================================================
    TABLETS
-=========================== */
+=========================================================== */
 
 @media (max-width:900px){
 
@@ -18,33 +19,33 @@ nav{
 
     height:auto;
 
-    padding:16px 0;
+    padding:14px 0;
 
 }
 
 .logo{
 
-    font-size:24px;
+    font-size:22px;
 
 }
 
 .logo img{
 
-    width:48px;
+    width:46px;
 
-    height:48px;
+    height:46px;
 
 }
 
 .menu{
 
-    margin-top:16px;
+    margin-top:12px;
 
     display:grid;
 
     grid-template-columns:repeat(2,auto);
 
-    gap:14px 28px;
+    gap:12px 24px;
 
     justify-content:center;
 
@@ -52,7 +53,7 @@ nav{
 
 .menu a{
 
-    font-size:18px;
+    font-size:17px;
 
 }
 
@@ -60,7 +61,7 @@ nav{
 
 .hero{
 
-    padding:40px 0 45px;
+    padding:28px 0 30px;
 
 }
 
@@ -68,7 +69,7 @@ nav{
 
     grid-template-columns:1fr;
 
-    gap:35px;
+    gap:26px;
 
     text-align:center;
 
@@ -84,149 +85,39 @@ nav{
 
 }
 
+.badge{
+
+    margin-bottom:16px;
+
+}
+
 .hero h1{
 
-    font-size:46px;
+    font-size:42px;
 
     line-height:1.15;
 
     max-width:100%;
 
-    margin-bottom:18px;
+    margin-bottom:16px;
 
 }
 
 .hero p{
 
-    font-size:21px;
+    font-size:20px;
 
-    line-height:1.6;
+    line-height:1.55;
 
     max-width:100%;
 
-    margin-bottom:28px;
+    margin-bottom:22px;
 
 }
 
 .hero-buttons{
 
     justify-content:center;
-
-}
-
-.hero-stats{
-
-    width:100%;
-
-}
-
-.stat-card{
-
-    min-height:auto;
-
-}
-
-/* GRID DE VÍDEOS */
-
-.video-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-/* CATEGORIAS */
-
-.categories-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-/* ===========================
-   CELULARES
-=========================== */
-
-@media (max-width:600px){
-
-/* HEADER */
-
-nav{
-
-    padding:12px 0 16px;
-
-}
-
-.logo{
-
-    font-size:18px;
-
-    gap:10px;
-
-}
-
-.logo img{
-
-    width:40px;
-
-    height:40px;
-
-}
-
-.menu{
-
-    gap:10px 22px;
-
-}
-
-.menu a{
-
-    font-size:16px;
-
-}
-
-/* HERO */
-
-.hero{
-
-    padding:28px 0 35px;
-
-}
-
-.badge{
-
-    font-size:13px;
-
-    padding:8px 14px;
-
-    margin-bottom:18px;
-
-}
-
-.hero h1{
-
-    font-size:34px;
-
-    line-height:1.18;
-
-    margin-bottom:18px;
-
-}
-
-.hero p{
-
-    font-size:18px;
-
-    margin-bottom:24px;
-
-}
-
-.hero-buttons{
-
-    flex-direction:column;
-
-    align-items:center;
 
     gap:14px;
 
@@ -236,11 +127,7 @@ nav{
 
 .btn-secondary{
 
-    width:100%;
-
-    max-width:300px;
-
-    padding:16px;
+    padding:15px 28px;
 
     font-size:18px;
 
@@ -248,25 +135,196 @@ nav{
 
 .hero-stats{
 
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
     gap:14px;
 
 }
 
 .stat-card{
 
-    padding:18px;
+    min-height:auto;
+
+    padding:16px;
 
 }
 
 .stat-card strong{
 
-    font-size:32px;
+    font-size:30px;
 
 }
 
 .stat-card span{
 
-    font-size:16px;
+    font-size:15px;
+
+}
+
+/* GRID */
+
+.video-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.categories-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* ===========================================================
+   CELULARES
+=========================================================== */
+
+@media (max-width:600px){
+
+/* HEADER */
+
+nav{
+
+    padding:10px 0 12px;
+
+}
+
+.logo{
+
+    font-size:17px;
+
+    gap:8px;
+
+}
+
+.logo img{
+
+    width:36px;
+
+    height:36px;
+
+}
+
+.menu{
+
+    margin-top:10px;
+
+    gap:8px 20px;
+
+}
+
+.menu a{
+
+    font-size:15px;
+
+}
+
+/* HERO */
+
+.hero{
+
+    padding:18px 0 20px;
+
+}
+
+.hero-content{
+
+    gap:18px;
+
+}
+
+.badge{
+
+    font-size:12px;
+
+    padding:7px 12px;
+
+    margin-bottom:12px;
+
+}
+
+.hero h1{
+
+    font-size:30px;
+
+    line-height:1.15;
+
+    margin-bottom:12px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+    line-height:1.45;
+
+    margin-bottom:18px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.btn,
+
+.btn-secondary{
+
+    width:100%;
+
+    max-width:260px;
+
+    padding:14px;
+
+    font-size:17px;
+
+}
+
+/* ESTATÍSTICAS */
+
+.hero-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+}
+
+.stat-card{
+
+    padding:12px 8px;
+
+}
+
+.stat-card strong{
+
+    font-size:24px;
+
+    margin-bottom:4px;
+
+}
+
+.stat-card span{
+
+    font-size:13px;
+
+    line-height:1.25;
 
 }
 
@@ -274,17 +332,23 @@ nav{
 
 .section-title{
 
-    font-size:30px;
+    font-size:28px;
 
     text-align:center;
 
 }
 
-/* GRID DOS VÍDEOS */
+/* VÍDEOS */
 
 .video-grid{
 
     grid-template-columns:1fr;
+
+}
+
+.video-card{
+
+    width:100%;
 
 }
 
@@ -296,19 +360,11 @@ nav{
 
 }
 
-/* CARDS */
-
-.video-card{
-
-    width:100%;
-
-}
-
 /* FOOTER */
 
 footer{
 
-    padding:18px 0;
+    padding:14px 0;
 
     text-align:center;
 
