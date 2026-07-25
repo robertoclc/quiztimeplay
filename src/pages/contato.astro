@@ -11,77 +11,68 @@ import Footer from "../components/Footer.astro";
 
 <Header />
 
-<section class="hero hero-small">
+<section class="hero hero-contact">
 
-    <div class="container hero-content">
+    <div class="container">
 
-        <div class="hero-text">
+        <span class="badge">
+            📬 Contato
+        </span>
 
-            <span class="badge">
-                📬 Contato
-            </span>
+        <h1>Fale com o QuizTimePlay</h1>
 
-            <h1>
-                Fale com o QuizTimePlay
-            </h1>
-
-            <p>
-                Tem alguma sugestão, encontrou algum erro
-                ou deseja falar sobre parcerias?
-                Será um prazer conversar com você.
-            </p>
-
-        </div>
+        <p>
+            Sugestões, dúvidas ou parcerias.
+            Será um prazer conversar com você.
+        </p>
 
     </div>
 
 </section>
 
-<section class="contact-section">
+<section class="contact">
 
-    <div class="container">
+    <div class="container cards">
 
-        <div class="contact-card">
+        <div class="card">
 
-            <h2>📧 E-mail</h2>
+            <div class="emoji">📧</div>
 
-            <a
-                href="mailto:contato@quiztimeplay.com.br"
-                class="email">
+            <h2>E-mail</h2>
 
+            <p class="email">
                 contato@quiztimeplay.com.br
-
-            </a>
+            </p>
 
             <a
                 href="mailto:contato@quiztimeplay.com.br"
-                class="btn-contact">
+                class="btn">
 
-                📨 Enviar E-mail
+                📨 Enviar e-mail
 
             </a>
 
-            <hr>
+        </div>
 
-            <h2>📺 Canal Oficial</h2>
+        <div class="card">
+
+            <div class="emoji">📺</div>
+
+            <h2>YouTube</h2>
 
             <p>
 
-                Acompanhe todos os nossos quizzes diretamente no YouTube.
+                Conheça todos os nossos quizzes.
 
             </p>
 
             <a
-
                 href="https://www.youtube.com/@QuizTime-Tc"
-
                 target="_blank"
-
                 rel="noopener noreferrer"
+                class="btn">
 
-                class="btn-contact">
-
-                ▶ Inscrever-se no Canal
+                ▶ Ir para o canal
 
             </a>
 
@@ -97,99 +88,119 @@ import Footer from "../components/Footer.astro";
 
 <style>
 
-.hero-small{
+.hero-contact{
 
-    padding:55px 20px 35px;
+    padding:45px 20px 25px;
 
-}
-
-.hero-small h1{
-
-    font-size:52px;
+    text-align:center;
 
 }
 
-.hero-small p{
+.hero-contact h1{
 
-    max-width:700px;
+    font-size:46px;
+
+    margin:12px 0;
+
+}
+
+.hero-contact p{
+
+    font-size:20px;
+
+    color:#cbd5e1;
+
+    max-width:650px;
 
     margin:auto;
 
 }
 
-.contact-section{
+.contact{
 
-    padding:40px 20px 70px;
+    padding:30px 20px 60px;
 
 }
 
-.contact-section .container{
+.cards{
 
-    max-width:760px;
+    max-width:900px;
 
     margin:auto;
 
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
 }
 
-.contact-card{
+.card{
 
     background:#1f2937;
 
     border:1px solid rgba(255,255,255,.08);
 
-    border-radius:20px;
+    border-radius:18px;
 
-    padding:35px;
+    padding:30px;
 
     text-align:center;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 
 }
 
-.contact-card h2{
+.emoji{
 
-    font-size:28px;
-
-    color:#fff;
+    font-size:42px;
 
     margin-bottom:15px;
 
 }
 
-.contact-card p{
+.card h2{
+
+    color:#fff;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
 
     color:#cbd5e1;
 
     font-size:18px;
 
-    margin-bottom:20px;
+    line-height:1.5;
 
-    line-height:1.6;
+    min-height:55px;
 
 }
 
 .email{
 
-    display:block;
+    color:#60a5fa !important;
 
-    margin-bottom:25px;
-
-    color:#60a5fa;
-
-    font-size:24px;
+    font-size:21px !important;
 
     font-weight:700;
-
-    text-decoration:none;
 
     word-break:break-word;
 
 }
 
-.btn-contact{
+.btn{
 
     display:inline-block;
+
+    margin-top:20px;
+
+    padding:15px 30px;
 
     background:#2563eb;
 
@@ -197,11 +208,7 @@ import Footer from "../components/Footer.astro";
 
     text-decoration:none;
 
-    padding:16px 36px;
-
     border-radius:12px;
-
-    font-size:18px;
 
     font-weight:700;
 
@@ -209,7 +216,7 @@ import Footer from "../components/Footer.astro";
 
 }
 
-.btn-contact:hover{
+.btn:hover{
 
     background:#1d4ed8;
 
@@ -217,33 +224,23 @@ import Footer from "../components/Footer.astro";
 
 }
 
-hr{
+@media(max-width:850px){
 
-    border:none;
+    .cards{
 
-    border-top:1px solid rgba(255,255,255,.12);
-
-    margin:35px 0;
-
-}
-
-@media(max-width:768px){
-
-    .hero-small h1{
-
-        font-size:38px;
+        grid-template-columns:1fr;
 
     }
 
-    .contact-card{
+    .hero-contact h1{
 
-        padding:28px;
+        font-size:36px;
 
     }
 
-    .email{
+    .hero-contact p{
 
-        font-size:20px;
+        font-size:18px;
 
     }
 
