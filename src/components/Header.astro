@@ -27,7 +27,6 @@
 
                 <a href="/categorias">Categorias</a>
 
-                
                 <a href="/contato">Contato</a>
 
             </div>
@@ -116,20 +115,15 @@ nav{
     width:100%;
 }
 
-@media(max-width:850px){
+/* Tablet */
+
+@media (max-width:900px){
 
     nav{
         flex-direction:column;
         justify-content:center;
         height:auto;
-        padding:20px 0;
-    }
-
-    .menu{
-        margin-top:20px;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:20px;
+        padding:16px 0;
     }
 
     .logo{
@@ -139,6 +133,47 @@ nav{
     .logo img{
         width:48px;
         height:48px;
+    }
+
+    .menu{
+        margin-top:16px;
+        display:grid;
+        grid-template-columns:repeat(2,auto);
+        gap:14px 28px;
+        justify-content:center;
+    }
+
+    .menu a{
+        font-size:18px;
+    }
+
+}
+
+/* Celulares */
+
+@media (max-width:600px){
+
+    nav{
+        padding:12px 0 16px;
+    }
+
+    .logo{
+        font-size:18px;
+        gap:10px;
+    }
+
+    .logo img{
+        width:40px;
+        height:40px;
+    }
+
+    .menu{
+        margin-top:14px;
+        gap:10px 24px;
+    }
+
+    .menu a{
+        font-size:16px;
     }
 
 }
