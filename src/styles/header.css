@@ -22,10 +22,10 @@ nav{
 .logo{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:16px;
     text-decoration:none;
     color:#60a5fa;
-    font-size:34px;
+    font-size:36px;
     font-weight:bold;
     transition:.3s;
 }
@@ -35,8 +35,8 @@ nav{
 }
 
 .logo img{
-    width:52px;
-    height:52px;
+    width:58px;
+    height:58px;
     border-radius:50%;
     object-fit:cover;
 }
