@@ -4,7 +4,7 @@
 
 .hero{
 
-    padding:80px 0;
+    padding:45px 0;
 
     background:
         radial-gradient(circle at top right,#3b82f633 0%,transparent 35%),
@@ -20,9 +20,9 @@
 
 .hero h1{
 
-    font-size:58px;
+    font-size:42px;
 
-    margin-bottom:25px;
+    margin-bottom:18px;
 
 }
 
@@ -32,9 +32,9 @@
 
     margin:auto;
 
-    font-size:22px;
+    font-size:18px;
 
-    line-height:1.7;
+    line-height:1.6;
 
     color:#dbeafe;
 
@@ -46,7 +46,7 @@
 
 .categories{
 
-    padding:80px 0;
+    padding:45px 0;
 
 }
 
@@ -56,7 +56,7 @@
 
     grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 
-    gap:35px;
+    gap:28px;
 
 }
 
@@ -126,7 +126,7 @@
 
 .card-content{
 
-    padding:28px;
+    padding:20px;
 
     display:flex;
 
@@ -138,19 +138,19 @@
 
 .icon{
 
-    font-size:46px;
+    font-size:36px;
 
-    margin-bottom:18px;
+    margin-bottom:12px;
 
 }
 
 .card-content h2{
 
-    font-size:28px;
+    font-size:24px;
 
     color:white;
 
-    margin-bottom:18px;
+    margin-bottom:12px;
 
 }
 
@@ -158,13 +158,13 @@
 
     color:#cbd5e1;
 
-    line-height:1.7;
+    line-height:1.5;
 
-    font-size:18px;
+    font-size:16px;
 
     flex:1;
 
-    margin-bottom:30px;
+    margin-bottom:20px;
 
 }
 
@@ -186,9 +186,9 @@
 
     border-radius:12px;
 
-    padding:16px;
+    padding:14px;
 
-    font-size:17px;
+    font-size:16px;
 
     font-weight:bold;
 
