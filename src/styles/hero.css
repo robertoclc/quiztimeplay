@@ -107,7 +107,9 @@
 
     flex-wrap:wrap;
 
-    margin-top:35px;
+    justify-content:center;
+
+    margin-top:50px;
 
 }
 
