@@ -222,29 +222,35 @@
 
     width:100%;
 
-    padding:15px;
+    padding:17px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:14px;
 
     background:#2563eb;
 
     color:#fff;
 
-    font-size:15px;
+    font-size:16px;
 
     font-weight:700;
 
     cursor:pointer;
 
-    transition:.30s;
+    transition:all .30s ease;
+
+    box-shadow:0 8px 18px rgba(37,99,235,.30);
 
 }
 
 .watch-button:hover{
 
     background:#3b82f6;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 14px 28px rgba(59,130,246,.40);
 
 }
 
