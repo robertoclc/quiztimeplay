@@ -1,0 +1,317 @@
+/* ===========================================================
+   RESPONSIVIDADE GERAL
+=========================================================== */
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width:900px){
+
+/* HEADER */
+
+nav{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    height:auto;
+
+    padding:16px 0;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+}
+
+.logo img{
+
+    width:48px;
+
+    height:48px;
+
+}
+
+.menu{
+
+    margin-top:16px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,auto);
+
+    gap:14px 28px;
+
+    justify-content:center;
+
+}
+
+.menu a{
+
+    font-size:18px;
+
+}
+
+/* HERO */
+
+.hero{
+
+    padding:40px 0 45px;
+
+}
+
+.hero-content{
+
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+    text-align:center;
+
+}
+
+.hero-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.hero h1{
+
+    font-size:46px;
+
+    line-height:1.15;
+
+    max-width:100%;
+
+    margin-bottom:18px;
+
+}
+
+.hero p{
+
+    font-size:21px;
+
+    line-height:1.6;
+
+    max-width:100%;
+
+    margin-bottom:28px;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-stats{
+
+    width:100%;
+
+}
+
+.stat-card{
+
+    min-height:auto;
+
+}
+
+/* GRID DE VÍDEOS */
+
+.video-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* CATEGORIAS */
+
+.categories-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===========================
+   CELULARES
+=========================== */
+
+@media (max-width:600px){
+
+/* HEADER */
+
+nav{
+
+    padding:12px 0 16px;
+
+}
+
+.logo{
+
+    font-size:18px;
+
+    gap:10px;
+
+}
+
+.logo img{
+
+    width:40px;
+
+    height:40px;
+
+}
+
+.menu{
+
+    gap:10px 22px;
+
+}
+
+.menu a{
+
+    font-size:16px;
+
+}
+
+/* HERO */
+
+.hero{
+
+    padding:28px 0 35px;
+
+}
+
+.badge{
+
+    font-size:13px;
+
+    padding:8px 14px;
+
+    margin-bottom:18px;
+
+}
+
+.hero h1{
+
+    font-size:34px;
+
+    line-height:1.18;
+
+    margin-bottom:18px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    margin-bottom:24px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.btn,
+
+.btn-secondary{
+
+    width:100%;
+
+    max-width:300px;
+
+    padding:16px;
+
+    font-size:18px;
+
+}
+
+.hero-stats{
+
+    gap:14px;
+
+}
+
+.stat-card{
+
+    padding:18px;
+
+}
+
+.stat-card strong{
+
+    font-size:32px;
+
+}
+
+.stat-card span{
+
+    font-size:16px;
+
+}
+
+/* SEÇÕES */
+
+.section-title{
+
+    font-size:30px;
+
+    text-align:center;
+
+}
+
+/* GRID DOS VÍDEOS */
+
+.video-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+/* CATEGORIAS */
+
+.categories-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+/* CARDS */
+
+.video-card{
+
+    width:100%;
+
+}
+
+/* FOOTER */
+
+footer{
+
+    padding:18px 0;
+
+    text-align:center;
+
+}
+
+}
