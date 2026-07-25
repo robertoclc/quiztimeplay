@@ -29,8 +29,15 @@ const diffDays = Math.floor(
 const isNew = diffDays <= 7;
 ---
 
-<a class="video-card" href={url} target="_blank">
+<a
+    class="video-card"
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+>
+
     <div class="thumb">
+
         <img
             src={thumbnail}
             alt={title}
@@ -48,9 +55,11 @@ const isNew = diffDays <= 7;
         <span class="video-duration">
             {duration}
         </span>
+
     </div>
 
     <div class="info">
+
         <span class="category">
             {category}
         </span>
@@ -62,5 +71,7 @@ const isNew = diffDays <= 7;
         <button class="watch-button">
             ▶ Assistir no YouTube
         </button>
+
     </div>
+
 </a>
