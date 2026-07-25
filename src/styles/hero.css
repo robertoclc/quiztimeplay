@@ -5,7 +5,7 @@
 .hero{
     position:relative;
     overflow:hidden;
-    padding:60px 0 70px;
+    padding:45px 0 50px;
 
     background:
         radial-gradient(circle at top right,#3b82f655 0%,transparent 35%),
@@ -23,7 +23,7 @@
 
     grid-template-columns:2fr 1fr;
 
-    gap:70px;
+    gap:60px;
 
     align-items:center;
 
@@ -57,7 +57,7 @@
 
     font-weight:700;
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 
 }
 
@@ -71,7 +71,7 @@
 
     line-height:1.1;
 
-    margin-bottom:28px;
+    margin-bottom:22px;
 
     max-width:750px;
 
@@ -85,13 +85,13 @@
 
     font-size:24px;
 
-    line-height:1.7;
+    line-height:1.6;
 
     color:#dbeafe;
 
     max-width:700px;
 
-    margin-bottom:42px;
+    margin-bottom:34px;
 
 }
 
@@ -179,7 +179,7 @@
 
     justify-content:center;
 
-    gap:18px;
+    gap:16px;
 
 }
 
@@ -189,9 +189,9 @@
 
 .stat-card{
 
-    padding:22px;
+    padding:20px;
 
-    min-height:118px;
+    min-height:108px;
 
     border-radius:18px;
 
