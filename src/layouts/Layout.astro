@@ -14,8 +14,8 @@ interface Props {
 }
 
 const {
-    title = "QuizTimePlay",
-    description = "QuizTimePlay - O maior canal de quizzes do Brasil."
+    title = "QuizTimePlay | Canal de Quizzes no YouTube",
+    description = "Site oficial do canal QuizTimePlay no YouTube. Assista quizzes de conhecimentos gerais, futebol, história, ciência e cultura com novos vídeos a cada 15 dias."
 } = Astro.props;
 
 const site = "https://quiztimeplay.com.br";
@@ -69,30 +69,42 @@ const schema = {
 
 <meta name="google-site-verification" content="kbk5Idx4C7-Z77nymncvDol62zAoq6suu3uttSplxB4" />
 
-<meta name="keywords" content="quiz, quizzes, conhecimentos gerais, futebol, história, ciência, música, cultura pop" />
+<meta name="keywords" content="quiz, quizzes, conhecimentos gerais, futebol, história, ciência, cultura pop, QuizTimePlay, YouTube" />
 
 <link rel="canonical" href={site} />
 
 <meta name="theme-color" content="#2563eb" />
 
 <meta property="og:type" content="website" />
+
 <meta property="og:locale" content="pt_BR" />
+
 <meta property="og:site_name" content="QuizTimePlay" />
+
 <meta property="og:title" content={title} />
+
 <meta property="og:description" content={description} />
+
 <meta property="og:url" content={site} />
+
 <meta property="og:image" content={image} />
 
 <meta name="twitter:card" content="summary_large_image" />
+
 <meta name="twitter:title" content={title} />
+
 <meta name="twitter:description" content={description} />
+
 <meta name="twitter:image" content={image} />
 
 <link rel="icon" href="/favicon.ico" />
+
 <link rel="apple-touch-icon" href="/logo.png" />
 
 <link rel="preconnect" href="https://www.youtube.com">
+
 <link rel="preconnect" href="https://i.ytimg.com">
+
 <link rel="preconnect" href="https://www.googleapis.com">
 
 <script
@@ -101,6 +113,7 @@ set:html={JSON.stringify(schema)}
 ></script>
 
 <!-- Google AdSense -->
+
 <script
   async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4007513954226457"
