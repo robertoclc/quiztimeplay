@@ -126,7 +126,7 @@
 
 .card-content{
 
-    padding:20px;
+    padding:16px;
 
     display:flex;
 
@@ -138,19 +138,19 @@
 
 .icon{
 
-    font-size:36px;
+    font-size:32px;
 
-    margin-bottom:12px;
+    margin-bottom:8px;
 
 }
 
 .card-content h2{
 
-    font-size:24px;
+    font-size:22px;
 
     color:white;
 
-    margin-bottom:12px;
+    margin-bottom:8px;
 
 }
 
@@ -158,13 +158,13 @@
 
     color:#cbd5e1;
 
-    line-height:1.5;
+    line-height:1.4;
 
-    font-size:16px;
+    font-size:15px;
 
     flex:1;
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
 }
 
@@ -186,7 +186,7 @@
 
     border-radius:12px;
 
-    padding:14px;
+    padding:12px;
 
     font-size:16px;
 
