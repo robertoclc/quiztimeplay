@@ -9,7 +9,7 @@
 
 @media (max-width:900px){
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 nav{
 
@@ -19,7 +19,7 @@ nav{
 
     height:auto;
 
-    padding:14px 0;
+    padding:10px 0;
 
 }
 
@@ -31,37 +31,39 @@ nav{
 
 .logo img{
 
-    width:46px;
+    width:44px;
 
-    height:46px;
+    height:44px;
 
 }
 
 .menu{
 
-    margin-top:12px;
+    margin-top:8px;
 
-    display:grid;
-
-    grid-template-columns:repeat(2,auto);
-
-    gap:12px 24px;
+    display:flex;
 
     justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:nowrap;
+
+    gap:20px;
 
 }
 
 .menu a{
 
-    font-size:17px;
+    font-size:15px;
 
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
 
-    padding:28px 0 30px;
+    padding:22px 0 24px;
 
 }
 
@@ -69,7 +71,7 @@ nav{
 
     grid-template-columns:1fr;
 
-    gap:26px;
+    gap:18px;
 
     text-align:center;
 
@@ -87,31 +89,35 @@ nav{
 
 .badge{
 
-    margin-bottom:16px;
+    font-size:13px;
+
+    padding:7px 12px;
+
+    margin-bottom:10px;
 
 }
 
 .hero h1{
 
-    font-size:42px;
+    font-size:40px;
 
     line-height:1.15;
 
-    max-width:100%;
+    margin-bottom:14px;
 
-    margin-bottom:16px;
+    max-width:100%;
 
 }
 
 .hero p{
 
-    font-size:20px;
+    font-size:19px;
 
-    line-height:1.55;
+    line-height:1.5;
+
+    margin-bottom:18px;
 
     max-width:100%;
-
-    margin-bottom:22px;
 
 }
 
@@ -119,37 +125,36 @@ nav{
 
     justify-content:center;
 
-    gap:14px;
+    gap:12px;
 
 }
 
 .btn,
-
 .btn-secondary{
 
-    padding:15px 28px;
+    padding:15px 26px;
 
     font-size:18px;
 
 }
 
-.hero-stats{
+/* ================= ESTATÍSTICAS ================= */
 
-    width:100%;
+.hero-stats{
 
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:14px;
+    gap:12px;
 
 }
 
 .stat-card{
 
-    min-height:auto;
+    padding:16px 10px;
 
-    padding:16px;
+    min-height:92px;
 
 }
 
@@ -161,11 +166,13 @@ nav{
 
 .stat-card span{
 
-    font-size:15px;
+    font-size:14px;
+
+    line-height:1.3;
 
 }
 
-/* GRID */
+/* ================= GRIDS ================= */
 
 .video-grid{
 
@@ -188,17 +195,17 @@ nav{
 
 @media (max-width:600px){
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 nav{
 
-    padding:10px 0 12px;
+    padding:8px 0 10px;
 
 }
 
 .logo{
 
-    font-size:17px;
+    font-size:16px;
 
     gap:8px;
 
@@ -206,37 +213,45 @@ nav{
 
 .logo img{
 
-    width:36px;
+    width:34px;
 
-    height:36px;
+    height:34px;
 
 }
 
 .menu{
 
-    margin-top:10px;
+    margin-top:6px;
 
-    gap:8px 20px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:nowrap;
+
+    gap:14px;
 
 }
 
 .menu a{
 
-    font-size:15px;
+    font-size:14px;
 
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
 
-    padding:18px 0 20px;
+    padding:16px 0 18px;
 
 }
 
 .hero-content{
 
-    gap:18px;
+    gap:14px;
 
 }
 
@@ -244,29 +259,29 @@ nav{
 
     font-size:12px;
 
-    padding:7px 12px;
+    padding:6px 10px;
 
-    margin-bottom:12px;
+    margin-bottom:8px;
 
 }
 
 .hero h1{
 
-    font-size:30px;
+    font-size:28px;
 
     line-height:1.15;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
 }
 
 .hero p{
 
-    font-size:17px;
+    font-size:16px;
 
     line-height:1.45;
 
-    margin-bottom:18px;
+    margin-bottom:14px;
 
 }
 
@@ -276,25 +291,24 @@ nav{
 
     align-items:center;
 
-    gap:10px;
+    gap:8px;
 
 }
 
 .btn,
-
 .btn-secondary{
 
     width:100%;
 
-    max-width:260px;
+    max-width:250px;
 
-    padding:14px;
+    padding:13px;
 
-    font-size:17px;
+    font-size:16px;
 
 }
 
-/* ESTATÍSTICAS */
+/* ================= ESTATÍSTICAS ================= */
 
 .hero-stats{
 
@@ -302,43 +316,45 @@ nav{
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:10px;
+    gap:8px;
 
 }
 
 .stat-card{
 
-    padding:12px 8px;
+    padding:14px 8px;
+
+    min-height:78px;
 
 }
 
 .stat-card strong{
 
-    font-size:24px;
+    font-size:22px;
 
-    margin-bottom:4px;
+    margin-bottom:3px;
 
 }
 
 .stat-card span{
 
-    font-size:13px;
+    font-size:12px;
 
-    line-height:1.25;
+    line-height:1.2;
 
 }
 
-/* SEÇÕES */
+/* ================= SEÇÕES ================= */
 
 .section-title{
 
-    font-size:28px;
+    font-size:26px;
 
     text-align:center;
 
 }
 
-/* VÍDEOS */
+/* ================= VÍDEOS ================= */
 
 .video-grid{
 
@@ -352,7 +368,7 @@ nav{
 
 }
 
-/* CATEGORIAS */
+/* ================= CATEGORIAS ================= */
 
 .categories-grid{
 
@@ -360,11 +376,11 @@ nav{
 
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 
-    padding:14px 0;
+    padding:12px 0;
 
     text-align:center;
 
