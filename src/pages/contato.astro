@@ -1,0 +1,234 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+    title="Contato | QuizTimePlay"
+    description="Entre em contato com o QuizTimePlay para enviar sugestões, tirar dúvidas ou falar sobre parcerias."
+>
+
+<Header />
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="badge">
+                📬 Fale Conosco
+            </span>
+
+            <h1>
+                Entre em contato com o QuizTimePlay
+            </h1>
+
+            <p>
+                Tem alguma sugestão de quiz, encontrou algum problema
+                ou deseja falar sobre parcerias?
+                Será um prazer conversar com você.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact-section">
+
+    <div class="container">
+
+        <div class="contact-card">
+
+            <h2>📧 E-mail</h2>
+
+            <p>
+
+                Nosso canal oficial de atendimento é:
+
+            </p>
+
+            <a
+                href="mailto:contato@quiztimeplay.com.br"
+                class="email">
+
+                contato@quiztimeplay.com.br
+
+            </a>
+
+            <a
+                href="mailto:contato@quiztimeplay.com.br"
+                class="btn-contact">
+
+                📨 Enviar E-mail
+
+            </a>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h2>📺 Canal no YouTube</h2>
+
+            <p>
+
+                Inscreva-se para acompanhar todos os novos quizzes.
+
+            </p>
+
+            <a
+
+                href="https://www.youtube.com/@QuizTime-Tc"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+                class="btn-contact">
+
+                ▶ Inscrever-se no Canal
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<Footer />
+
+</Layout>
+
+<style>
+
+.contact-section{
+
+    padding:70px 20px;
+
+}
+
+.contact-section .container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:grid;
+
+    gap:35px;
+
+}
+
+.contact-card{
+
+    background:#1f2937;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.contact-card h2{
+
+    font-size:34px;
+
+    color:white;
+
+    margin-bottom:18px;
+
+}
+
+.contact-card p{
+
+    font-size:20px;
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+.email{
+
+    display:block;
+
+    font-size:28px;
+
+    color:#60a5fa;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    margin-bottom:35px;
+
+    word-break:break-word;
+
+}
+
+.btn-contact{
+
+    display:inline-block;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 42px;
+
+    border-radius:14px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.btn-contact:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+@media(max-width:768px){
+
+    .contact-card{
+
+        padding:28px;
+
+    }
+
+    .contact-card h2{
+
+        font-size:28px;
+
+    }
+
+    .email{
+
+        font-size:22px;
+
+    }
+
+}
+
+</style>
