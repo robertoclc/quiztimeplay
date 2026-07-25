@@ -9,181 +9,111 @@
 
 @media (max-width:900px){
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 nav{
-
     flex-direction:column;
-
     justify-content:center;
-
     height:auto;
-
     padding:10px 0;
-
 }
 
 .logo{
-
     font-size:22px;
-
 }
 
 .logo img{
-
     width:44px;
-
     height:44px;
-
 }
 
 .menu{
-
     margin-top:8px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    flex-wrap:nowrap;
-
     gap:20px;
-
+    flex-wrap:nowrap;
 }
 
 .menu a{
-
     font-size:15px;
-
+    white-space:nowrap;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
-
     padding:22px 0 24px;
-
 }
 
 .hero-content{
-
     grid-template-columns:1fr;
-
     gap:18px;
-
     text-align:center;
-
 }
 
 .hero-text{
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
 }
 
 .badge{
-
     font-size:13px;
-
     padding:7px 12px;
-
     margin-bottom:10px;
-
 }
 
 .hero h1{
-
     font-size:40px;
-
     line-height:1.15;
-
     margin-bottom:14px;
-
-    max-width:100%;
-
 }
 
 .hero p{
-
     font-size:19px;
-
     line-height:1.5;
-
     margin-bottom:18px;
-
-    max-width:100%;
-
 }
 
 .hero-buttons{
-
     justify-content:center;
-
     gap:12px;
-
 }
 
 .btn,
 .btn-secondary{
-
     padding:15px 26px;
-
     font-size:18px;
-
 }
 
-/* ================= ESTATÍSTICAS ================= */
-
 .hero-stats{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:12px;
-
 }
 
 .stat-card{
-
     padding:16px 10px;
-
-    min-height:92px;
-
+    min-height:100px;
 }
 
 .stat-card strong{
-
     font-size:30px;
-
 }
 
 .stat-card span{
-
     font-size:14px;
-
     line-height:1.3;
-
 }
 
-/* ================= GRIDS ================= */
-
 .video-grid{
-
     grid-template-columns:repeat(2,1fr);
-
 }
 
 .categories-grid{
-
     grid-template-columns:repeat(2,1fr);
-
 }
 
 }
@@ -195,195 +125,129 @@ nav{
 
 @media (max-width:600px){
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 nav{
-
-    padding:8px 0 10px;
-
+    padding:6px 0 8px;
 }
 
 .logo{
-
-    font-size:16px;
-
-    gap:8px;
-
+    font-size:15px;
+    gap:6px;
 }
 
 .logo img{
-
-    width:34px;
-
-    height:34px;
-
+    width:30px;
+    height:30px;
 }
 
 .menu{
-
     margin-top:6px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     flex-wrap:nowrap;
-
-    gap:14px;
-
+    gap:10px;
 }
 
 .menu a{
-
-    font-size:14px;
-
+    font-size:13px;
+    white-space:nowrap;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
-
-    padding:16px 0 18px;
-
+    padding:14px 0 16px;
 }
 
 .hero-content{
-
-    gap:14px;
-
+    gap:12px;
 }
 
 .badge{
-
-    font-size:12px;
-
+    font-size:11px;
     padding:6px 10px;
-
     margin-bottom:8px;
-
 }
 
 .hero h1{
-
-    font-size:28px;
-
+    font-size:27px;
     line-height:1.15;
-
-    margin-bottom:10px;
-
+    margin-bottom:8px;
 }
 
 .hero p{
-
-    font-size:16px;
-
-    line-height:1.45;
-
-    margin-bottom:14px;
-
+    font-size:15px;
+    line-height:1.4;
+    margin-bottom:12px;
 }
 
 .hero-buttons{
-
     flex-direction:column;
-
     align-items:center;
-
     gap:8px;
-
 }
 
 .btn,
 .btn-secondary{
-
     width:100%;
-
-    max-width:250px;
-
-    padding:13px;
-
-    font-size:16px;
-
+    max-width:240px;
+    padding:12px;
+    font-size:15px;
 }
 
-/* ================= ESTATÍSTICAS ================= */
+/* ESTATÍSTICAS */
 
 .hero-stats{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:8px;
-
 }
 
 .stat-card{
-
-    padding:14px 8px;
-
-    min-height:78px;
-
+    min-height:92px;
+    padding:12px 6px;
 }
 
 .stat-card strong{
-
     font-size:22px;
-
-    margin-bottom:3px;
-
+    margin-bottom:4px;
 }
 
 .stat-card span{
-
     font-size:12px;
-
-    line-height:1.2;
-
+    line-height:1.25;
 }
 
-/* ================= SEÇÕES ================= */
+/* TÍTULOS */
 
 .section-title{
-
     font-size:26px;
-
     text-align:center;
-
 }
 
-/* ================= VÍDEOS ================= */
+/* VÍDEOS */
 
 .video-grid{
-
     grid-template-columns:1fr;
-
 }
 
 .video-card{
-
     width:100%;
-
 }
 
-/* ================= CATEGORIAS ================= */
+/* CATEGORIAS */
 
 .categories-grid{
-
     grid-template-columns:1fr;
-
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-
     padding:12px 0;
-
     text-align:center;
-
 }
 
 }
