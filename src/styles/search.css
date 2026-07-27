@@ -49,3 +49,55 @@
     box-shadow:0 0 0 5px rgba(59,130,246,.15);
 
 }
+
+/* ==========================================
+   NENHUM RESULTADO
+========================================== */
+
+.no-results{
+
+    display:none;
+
+    margin-top:40px;
+
+    padding:40px;
+
+    background:#1e293b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    text-align:center;
+
+}
+
+.no-results h3{
+
+    color:#ffffff;
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+.no-results p{
+
+    color:#94a3b8;
+
+    font-size:17px;
+
+    margin-bottom:24px;
+
+}
+
+.no-results .watch-button{
+
+    max-width:320px;
+
+    width:100%;
+
+    margin:0 auto;
+
+}

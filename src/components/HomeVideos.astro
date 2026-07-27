@@ -1,0 +1,144 @@
+---
+import VideoGrid from "./VideoGrid.astro";
+
+interface Video {
+    title: string;
+    thumbnail: string;
+    category: string;
+    duration: string;
+    publishedAt: string;
+    url: string;
+}
+
+interface Props {
+    videos: Video[];
+}
+
+const { videos }: Props = Astro.props;
+---
+
+<section id="quizzes">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            🔥 Últimos Quizzes
+        </h2>
+        
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchVideos"
+                placeholder="🔍 Pesquise um quiz..."
+            />
+
+        </div>
+
+        <div id="videoGridContainer">
+
+            <VideoGrid videos={videos} />
+
+        </div>
+
+        <div id="noResults" class="no-results">
+
+            <h3>
+                🔍 Nenhum quiz encontrado
+            </h3>
+
+            <p>
+                Tente pesquisar outro assunto.
+            </p>
+
+            <button
+                id="showAllVideos"
+                class="watch-button"
+                type="button">
+
+                📺 Ver todos os quizzes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script is:inline>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const input = document.getElementById("searchVideos");
+    const noResults = document.getElementById("noResults");
+    const showAll = document.getElementById("showAllVideos");
+    const grid = document.getElementById("videoGridContainer");
+
+    if (
+        !(input instanceof HTMLInputElement) ||
+        !(noResults instanceof HTMLElement) ||
+        !(showAll instanceof HTMLButtonElement) ||
+        !(grid instanceof HTMLElement)
+    ) return;
+
+    input.addEventListener("input", () => {
+
+        const texto = input.value.toLowerCase().trim();
+
+        let encontrados = 0;
+
+        document.querySelectorAll(".video-card").forEach((card) => {
+
+            if (!(card instanceof HTMLElement)) return;
+
+            const titulo =
+                card.querySelector("h3")?.textContent?.toLowerCase() ?? "";
+
+            const mostrar = titulo.includes(texto);
+
+            card.style.display = mostrar ? "flex" : "none";
+
+            if (mostrar) {
+                encontrados++;
+            }
+
+        });
+
+        if (encontrados === 0) {
+
+            grid.style.display = "none";
+            noResults.style.display = "block";
+
+        } else {
+
+            grid.style.display = "block";
+            noResults.style.display = "none";
+
+        }
+
+    });
+
+    showAll.addEventListener("click", () => {
+
+        input.value = "";
+
+        document.querySelectorAll(".video-card").forEach((card) => {
+
+            if (!(card instanceof HTMLElement)) return;
+
+            card.style.display = "flex";
+
+        });
+
+        grid.style.display = "block";
+
+        noResults.style.display = "none";
+
+        input.focus();
+
+    });
+
+});
+
+</script>

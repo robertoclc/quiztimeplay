@@ -1,0 +1,32 @@
+---
+import VideoGrid from "./VideoGrid.astro";
+
+interface Video {
+    title: string;
+    thumbnail: string;
+    category: string;
+    duration: string;
+    publishedAt: string;
+    url: string;
+}
+
+interface Props {
+    videos: Video[];
+}
+
+const { videos }: Props = Astro.props;
+---
+
+<section id="shorts">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            ⚡ Shorts
+        </h2>
+
+        <VideoGrid videos={videos} />
+
+    </div>
+
+</section>

@@ -1,8 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import HomeVideos from "../components/HomeVideos.astro";
+import HomeShorts from "../components/HomeShorts.astro";
 import Footer from "../components/Footer.astro";
-import VideoGrid from "../components/VideoGrid.astro";
 import { getHomeContent } from "../services/youtube";
 
 const { videos, shorts } = await getHomeContent();
@@ -15,140 +17,12 @@ const { videos, shorts } = await getHomeContent();
 
 <Header />
 
-<section class="hero">
+<Hero />
 
-    <div class="container hero-content">
+<HomeVideos videos={videos} />
 
-        <div class="hero-text">
-
-            <span class="badge">
-                🏆 Novos quizzes a cada 15 dias
-            </span>
-
-            <h1>
-                Quiz Time - Teste Seus Conhecimentos: os melhores quizzes do YouTube
-            </h1>
-
-            <p>
-                Teste seus conhecimentos em História, Futebol, Filmes,
-                Geografia, Bíblia, Ciências e muito mais.
-                Novos quizzes a cada 15 dias. Escolha seu desafio e
-                assista agora no YouTube.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#quizzes" class="btn">
-                    ▶ Assistir Quizzes
-                </a>
-
-                <a
-                    href="https://www.youtube.com/@QuizTime-Tc?sub_confirmation=1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-secondary">
-
-                    📺 Inscrever-se
-
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="hero-stats">
-
-            <div class="stat-card">
-                <strong>12</strong>
-                <span>Últimos vídeos</span>
-            </div>
-
-            <div class="stat-card">
-                <strong>+3000</strong>
-                <span>Perguntas</span>
-            </div>
-
-            <div class="stat-card">
-                <strong>100%</strong>
-                <span>Diversão</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section id="quizzes">
-
-    <div class="container">
-
-        <h2 class="section-title">
-            🔥 Últimos Quizzes
-        </h2>
-
-        <div class="search-box">
-
-            <input
-                type="text"
-                id="searchVideos"
-                placeholder="🔍 Pesquise um quiz..."
-            />
-
-        </div>
-
-        <VideoGrid videos={videos} />
-
-    </div>
-
-</section>
-
-<section id="shorts">
-
-    <div class="container">
-
-        <h2 class="section-title">
-            ⚡ Shorts
-        </h2>
-
-        <VideoGrid videos={shorts} />
-
-    </div>
-
-</section>
+<HomeShorts videos={shorts} />
 
 <Footer />
-
-<script is:inline>
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const input = document.getElementById("searchVideos");
-
-    if (!(input instanceof HTMLInputElement)) return;
-
-    input.addEventListener("input", () => {
-
-        const texto = input.value.toLowerCase().trim();
-
-        document.querySelectorAll(".video-card").forEach((card) => {
-
-            if (!(card instanceof HTMLElement)) return;
-
-            const titulo =
-                card.querySelector("h3")?.textContent?.toLowerCase() ?? "";
-
-            card.style.display =
-                titulo.includes(texto)
-                    ? "flex"
-                    : "none";
-
-        });
-
-    });
-
-});
-
-</script>
 
 </Layout>
