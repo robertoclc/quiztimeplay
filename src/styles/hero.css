@@ -113,61 +113,79 @@
 
 }
 
+/* ==========================================
+   BOTÃO PRINCIPAL
+========================================== */
+
 .btn{
 
-    background:#3b82f6;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
 
-    color:white;
+    color:#ffffff;
 
     text-decoration:none;
 
     padding:18px 36px;
 
-    border-radius:14px;
+    border-radius:16px;
 
     font-size:20px;
 
-    font-weight:bold;
+    font-weight:700;
 
-    transition:.3s;
+    box-shadow:0 12px 30px rgba(37,99,235,.35);
+
+    transition:all .30s ease;
 
 }
 
 .btn:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px) scale(1.03);
 
-    box-shadow:0 18px 35px rgba(59,130,246,.35);
+    box-shadow:0 18px 38px rgba(37,99,235,.45);
 
 }
 
+/* ==========================================
+   BOTÃO YOUTUBE
+========================================== */
+
 .btn-secondary{
 
-    background:transparent;
+    background:#ffffff;
 
-    border:2px solid rgba(255,255,255,.25);
-
-    color:white;
+    color:#cc0000;
 
     text-decoration:none;
 
     padding:18px 36px;
 
-    border-radius:14px;
+    border-radius:16px;
+
+    border:2px solid #ffffff;
 
     font-size:20px;
 
-    font-weight:bold;
+    font-weight:700;
 
-    transition:.3s;
+    box-shadow:0 12px 30px rgba(255,255,255,.18);
+
+    transition:all .30s ease;
 
 }
 
 .btn-secondary:hover{
 
-    background:white;
+    background:#ff0000;
 
-    color:#1e3a8a;
+    border-color:#ff0000;
+
+    color:#ffffff;
+
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:0 18px 38px rgba(255,0,0,.40);
 
 }
 
@@ -246,5 +264,25 @@
     color:#dbeafe;
 
     line-height:1.4;
+
+}
+
+/* ==========================================
+   PROVA SOCIAL
+========================================== */
+
+.hero-proof{
+
+    margin-top:40px;
+
+    font-size:20px;
+
+    line-height:1.5;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    font-weight:500;
 
 }
