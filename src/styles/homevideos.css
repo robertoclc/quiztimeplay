@@ -4,7 +4,17 @@
 
 .home-videos{
 
-    padding:35px 0 70px;
+    padding:40px 0 70px;
+
+}
+
+/* ==========================================
+   PROVA SOCIAL
+========================================== */
+
+.home-videos .hero-proof{
+
+    margin-bottom:16px;
 
 }
 
@@ -14,13 +24,15 @@
 
 .home-videos .section-title{
 
-    font-size:42px;
+    font-size:36px;
 
     font-weight:700;
 
-    margin-bottom:18px;
+    line-height:1.15;
 
     text-align:center;
+
+    margin-bottom:16px;
 
 }
 
@@ -30,9 +42,9 @@
 
 .home-videos .search-box{
 
-    margin:0 auto 20px;
+    max-width:680px;
 
-    max-width:720px;
+    margin:0 auto 20px;
 
 }
 
