@@ -14,6 +14,27 @@ export const PLAYLISTS = {
         id: "PLJ_4BZsiaFKs"
     },
 
+    ciencia: {
+        title: "Ciência",
+        description: "Curiosidades científicas, tecnologia e descobertas.",
+        icon: "🧪",
+        id: "PLbwiNkICPaPU"
+    },
+
+    biblia: {
+        title: "Bíblia",
+        description: "Perguntas e respostas para testar seus conhecimentos das Escrituras Sagradas.",
+        icon: "📖",
+        id: "PLUMFW2Tj-Elo"
+    },
+
+    turismo: {
+        title: "Turismo",
+        description: "Teste seus conhecimentos sobre países, cidades e pontos turísticos.",
+        icon: "🌍",
+        id: "PLMJtOAtbYIcU"
+    },
+
     futebol: {
         title: "Futebol e Copas",
         description: "Brasileirão, Libertadores, Copa do Mundo e muito mais.",
@@ -28,18 +49,18 @@ export const PLAYLISTS = {
         id: "PLAzElwR59qfY"
     },
 
-    ciencia: {
-        title: "Ciência",
-        description: "Curiosidades científicas, tecnologia e descobertas.",
-        icon: "🧪",
-        id: "PLbwiNkICPaPU"
-    },
-
     culturaPop: {
         title: "Cultura Pop",
         description: "Filmes, séries, personagens, games e entretenimento.",
         icon: "🎬",
         id: "PLSboRMB11WYY"
+    },
+
+    filmes: {
+        title: "Filmes",
+        description: "Quizzes sobre filmes para testar sua memória e conhecimentos do cinema.",
+        icon: "🍿",
+        id: "PLcAv9GLO50Pc"
     },
 
     musica: {
