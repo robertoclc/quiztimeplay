@@ -21,10 +21,14 @@ const { videos }: Props = Astro.props;
 
     <div class="container">
 
+        <div class="hero-proof">
+            🎯 Mais de 500 quizzes publicados para você testar seus conhecimentos.
+        </div>
+
         <h2 class="section-title">
             🔥 Últimos Quizzes
         </h2>
-        
+
         <div class="search-box">
 
             <input
@@ -99,9 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.style.display = mostrar ? "flex" : "none";
 
-            if (mostrar) {
-                encontrados++;
-            }
+            if (mostrar) encontrados++;
 
         });
 
@@ -132,9 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         grid.style.display = "block";
-
         noResults.style.display = "none";
-
         input.focus();
 
     });
