@@ -5,40 +5,42 @@
 header{
     position:sticky;
     top:0;
-    z-index:1000;
-    background:rgba(17,24,39,.95);
+    z-index:999;
     backdrop-filter:blur(12px);
+    background:rgba(15,23,42,.92);
     border-bottom:1px solid rgba(255,255,255,.08);
-    box-shadow:0 3px 15px rgba(0,0,0,.25);
 }
 
 nav{
+    height:82px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    height:82px;
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:16px;
+    gap:14px;
     text-decoration:none;
-    color:#60a5fa;
-    font-size:36px;
-    font-weight:bold;
+    color:white;
+    font-size:30px;
+    font-weight:700;
     transition:.3s;
 }
 
-.logo:hover{
-    color:#ffffff;
+.logo img{
+    width:56px;
+    height:56px;
+    object-fit:contain;
 }
 
-.logo img{
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    object-fit:cover;
+.logo:hover{
+    transform:scale(1.03);
+}
+
+.logo span{
+    color:#60a5fa;
 }
 
 .menu{
@@ -48,16 +50,16 @@ nav{
 }
 
 .menu a{
-    position:relative;
     color:#dbeafe;
     text-decoration:none;
     font-size:18px;
     font-weight:600;
     transition:.25s;
+    position:relative;
 }
 
 .menu a:hover{
-    color:#ffffff;
+    color:white;
 }
 
 .menu a::after{
@@ -67,9 +69,9 @@ nav{
     bottom:-8px;
     width:0;
     height:3px;
-    border-radius:20px;
     background:#3b82f6;
     transition:.25s;
+    border-radius:20px;
 }
 
 .menu a:hover::after{

@@ -10,30 +10,28 @@ nav{
     flex-direction:column;
     justify-content:center;
     height:auto;
-    padding:10px 0;
+    padding:16px 0;
 }
 
 .logo{
-    font-size:22px;
+    font-size:24px;
 }
 
 .logo img{
-    width:44px;
-    height:44px;
+    width:48px;
+    height:48px;
 }
 
 .menu{
-    margin-top:8px;
-    display:flex;
+    margin-top:16px;
+    display:grid;
+    grid-template-columns:repeat(2,auto);
+    gap:14px 28px;
     justify-content:center;
-    align-items:center;
-    gap:20px;
-    flex-wrap:nowrap;
 }
 
 .menu a{
-    font-size:15px;
-    white-space:nowrap;
+    font-size:18px;
 }
 
 /* HERO */
@@ -127,31 +125,26 @@ nav{
 /* HEADER */
 
 nav{
-    padding:4px 0 6px;
+    padding:12px 0 16px;
 }
 
 .logo{
-    font-size:14px;
-    gap:5px;
+    font-size:18px;
+    gap:10px;
 }
 
 .logo img{
-    width:28px;
-    height:28px;
+    width:40px;
+    height:40px;
 }
 
 .menu{
-    margin-top:4px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-    gap:8px;
+    margin-top:14px;
+    gap:10px 24px;
 }
 
 .menu a{
-    font-size:12px;
-    white-space:nowrap;
+    font-size:16px;
 }
 
 /* HERO */
