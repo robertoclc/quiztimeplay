@@ -239,11 +239,7 @@
 
     transition:all .30s ease;
 
-    box-shadow:
-    0 8px 18px rgba(37,99,235,.30);
-    0 2px 2px rgba(0,0,0,.65),
-    0 0 4px rgba(0,0,0,.45),
-    0 0 8px rgba(0,0,0,.25);
+    box-shadow:0 8px 18px rgba(37,99,235,.30);
 
 }
 
