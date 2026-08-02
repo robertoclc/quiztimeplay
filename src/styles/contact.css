@@ -1,0 +1,149 @@
+/* ==========================================
+   CONTATO
+========================================== */
+
+.hero-contact{
+
+    padding:18px 20px 10px;
+
+    text-align:center;
+
+}
+
+.hero-contact .badge{
+
+    display:inline-block;
+
+    margin-bottom:8px;
+
+}
+
+.hero-contact h1{
+
+    font-size:40px;
+
+    line-height:1.1;
+
+    margin:0 0 10px;
+
+}
+
+.hero-contact p{
+
+    font-size:18px;
+
+    color:#cbd5e1;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.contact{
+
+    padding:15px 20px 30px;
+
+}
+
+.cards{
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:#1f2937;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.22);
+
+}
+
+.emoji{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.card h2{
+
+    color:#fff;
+
+    font-size:24px;
+
+    margin:10px 0;
+
+}
+
+.card p{
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+    line-height:1.45;
+
+    margin:8px 0 15px;
+
+}
+
+.email{
+
+    color:#60a5fa !important;
+
+    font-size:20px !important;
+
+    font-weight:700;
+
+    word-break:break-word;
+
+}
+
+.contact .btn{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.contact .btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}

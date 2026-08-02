@@ -2,11 +2,55 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+import "../styles/contact.css";
 ---
+
+<!-- ==========================================================
+     ARQUIVO: contato.astro
+     CAMINHO: src/pages/contato.astro
+
+     FINALIDADE
+     Exibe a página de contato do QuizTimePlay.
+
+     ESTE ARQUIVO CONTROLA
+     • Título e descrição da página.
+     • Estrutura do Hero de contato.
+     • Informações de contato por e-mail.
+     • Link para o canal do YouTube.
+     • Exibição do Header e Footer.
+
+     COMPONENTES UTILIZADOS
+     • src/layouts/Layout.astro
+     • src/components/Header.astro
+     • src/components/Footer.astro
+
+     ESTILOS
+     • src/styles/contact.css
+     • src/styles/responsive.css
+       (somente regras para tablets e celulares)
+
+     NÃO ALTERAR NESTE ARQUIVO
+     • Cores, tamanhos, espaçamentos e aparência.
+     • Responsividade.
+     • Estilos dos botões, cards ou Hero.
+
+     FUNCIONAMENTO
+     • O endereço de e-mail utiliza um link mailto.
+     • O botão do YouTube abre o canal oficial em nova aba.
+     • A página utiliza o Layout global para SEO e estrutura HTML.
+
+     OBSERVAÇÕES
+     • Todo o CSS específico da página está centralizado em
+       src/styles/contact.css.
+     • As regras responsivas estão exclusivamente em
+       src/styles/responsive.css.
+========================================================== -->
 
 <Layout
     title="Contato | QuizTimePlay"
-    description="Entre em contato com o QuizTimePlay."
+    description="Entre em contato com o QuizTimePlay para enviar sugestões, dúvidas, parcerias ou falar sobre o canal Quiz Time - Teste Seus Conhecimentos no YouTube."
+    canonical="https://quiztimeplay.com.br/contato"
 >
 
 <Header />
@@ -89,181 +133,3 @@ import Footer from "../components/Footer.astro";
 <Footer />
 
 </Layout>
-
-<style>
-
-.hero-contact{
-
-    padding:18px 20px 10px;
-
-    text-align:center;
-
-}
-
-.hero-contact .badge{
-
-    display:inline-block;
-
-    margin-bottom:8px;
-
-}
-
-.hero-contact h1{
-
-    font-size:40px;
-
-    line-height:1.1;
-
-    margin:0 0 10px;
-
-}
-
-.hero-contact p{
-
-    font-size:18px;
-
-    color:#cbd5e1;
-
-    max-width:700px;
-
-    margin:auto;
-
-}
-
-.contact{
-
-    padding:15px 20px 30px;
-
-}
-
-.cards{
-
-    max-width:900px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-
-}
-
-.card{
-
-    background:#1f2937;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    padding:22px;
-
-    text-align:center;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.22);
-
-}
-
-.emoji{
-
-    font-size:34px;
-
-    margin-bottom:8px;
-
-}
-
-.card h2{
-
-    color:#fff;
-
-    font-size:24px;
-
-    margin:10px 0;
-
-}
-
-.card p{
-
-    color:#cbd5e1;
-
-    font-size:17px;
-
-    line-height:1.45;
-
-    margin:8px 0 15px;
-
-}
-
-.email{
-
-    color:#60a5fa !important;
-
-    font-size:20px !important;
-
-    font-weight:700;
-
-    word-break:break-word;
-
-}
-
-.btn{
-
-    display:inline-block;
-
-    padding:14px 28px;
-
-    background:#2563eb;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:10px;
-
-    font-size:17px;
-
-    font-weight:700;
-
-    transition:.25s;
-
-}
-
-.btn:hover{
-
-    background:#1d4ed8;
-
-    transform:translateY(-2px);
-
-}
-
-@media(max-width:850px){
-
-    .cards{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .hero-contact{
-
-        padding:30px 20px 18px;
-
-    }
-
-    .hero-contact h1{
-
-        font-size:34px;
-
-    }
-
-    .hero-contact p{
-
-        font-size:17px;
-
-    }
-
-}
-
-</style>

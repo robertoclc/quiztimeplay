@@ -10,18 +10,20 @@ import "../styles/footer.css";
 import "../styles/search.css";
 import "../styles/responsive.css";
 
+const site = "https://quiztimeplay.com.br";
+const image = `${site}/logo.png`;
+
 interface Props {
     title?: string;
     description?: string;
+    canonical?: string;
 }
 
 const {
     title = "QuizTimePlay | Site oficial do canal Quiz Time - Teste Seus Conhecimentos",
-    description = "Site oficial do canal Quiz Time - Teste Seus Conhecimentos no YouTube. Assista quizzes de conhecimentos gerais, futebol, história, ciência e cultura com novos vídeos a cada 15 dias."
+    description = "Site oficial do canal Quiz Time - Teste Seus Conhecimentos no YouTube. Assista quizzes de conhecimentos gerais, futebol, história, ciência e cultura com novos vídeos a cada 15 dias.",
+    canonical = site
 } = Astro.props;
-
-const site = "https://quiztimeplay.com.br";
-const image = `${site}/logo.png`;
 
 const schema = {
     "@context": "https://schema.org",
@@ -75,7 +77,7 @@ const schema = {
 
 <meta name="keywords" content="quiz, quizzes, conhecimentos gerais, futebol, história, ciência, cultura pop, QuizTimePlay, Quiz Time Teste Seus Conhecimentos, YouTube" />
 
-<link rel="canonical" href={site} />
+<link rel="canonical" href={canonical} />
 
 <meta name="theme-color" content="#2563eb" />
 
@@ -89,7 +91,7 @@ const schema = {
 
 <meta property="og:description" content={description} />
 
-<meta property="og:url" content={site} />
+<meta property="og:url" content={canonical} />
 
 <meta property="og:image" content={image} />
 
@@ -112,16 +114,16 @@ const schema = {
 <link rel="preconnect" href="https://www.googleapis.com">
 
 <script
-type="application/ld+json"
-set:html={JSON.stringify(schema)}
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
 ></script>
 
 <!-- Google AdSense -->
 
 <script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4007513954226457"
-  crossorigin="anonymous">
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4007513954226457"
+    crossorigin="anonymous">
 </script>
 
 <slot name="head" />
