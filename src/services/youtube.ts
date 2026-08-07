@@ -126,8 +126,6 @@ async function getPlaylistVideos(
 
             thumbnail:
 
-                item.snippet.thumbnails.maxres?.url ??
-
                 item.snippet.thumbnails.high?.url ??
 
                 item.snippet.thumbnails.medium?.url ??
