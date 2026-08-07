@@ -38,11 +38,14 @@ const isNew = diffDays <= 7;
 
     <div class="thumb">
 
-        <img
-            src={thumbnail}
-            alt={title}
-            loading="lazy"
-        />
+    <img
+        src={thumbnail}
+        alt={title}
+        width="480"
+        height="360"
+        loading="lazy"
+        decoding="async"
+    />
 
         {
             isNew && (
@@ -68,9 +71,9 @@ const isNew = diffDays <= 7;
             {title}
         </h3>
 
-        <button class="watch-button">
-            ▶ Assistir no YouTube
-        </button>
+        <span class="watch-button">
+    ▶ Assistir no YouTube
+        </span>
 
     </div>
 

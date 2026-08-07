@@ -1,6 +1,4 @@
-import type { Category } from "../types/category";
-
-export const PLAYLISTS: Record<string, Category> = {
+export const PLAYLISTS = {
   conhecimentosGerais: {
     id: "PLS8GxmExlfTE",
     slug: "conhecimentos-gerais",
