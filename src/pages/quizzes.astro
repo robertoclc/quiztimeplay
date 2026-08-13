@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HomeVideos from "../components/HomeVideos.astro";
+import HomeShorts from "../components/HomeShorts.astro";
+import Footer from "../components/Footer.astro";
+import { getHomeContent } from "../services/youtube";
+
+const { videos, shorts } = await getHomeContent();
+---
+
+<Layout
+  title="Quizzes | QuizTimePlay"
+  description="Assista aos melhores quizzes de Conhecimentos Gerais, História, Futebol, Bíblia, Ciências, Filmes, Turismo, Música, Cultura Pop e muito mais no canal Quiz Time - Teste Seus Conhecimentos."
+  canonical="https://quiztimeplay.com.br/quizzes"
+>
+  <Header />
+
+  <main>
+    <HomeVideos videos={videos} />
+    <HomeShorts videos={shorts} />
+  </main>
+
+  <Footer />
+</Layout>
