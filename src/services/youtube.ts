@@ -37,15 +37,15 @@ function formatDuration(duration: string): string {
 }
 
 /* ==========================================
-   BUSCA DURAÇÕES
+   BUSCA DURAÇÕES E DATAS DE PUBLICAÇÃO
 ========================================== */
 
-async function getDurations(videoIds: string[]) {
+async function getVideoDetails(videoIds: string[]) {
 
     if (!videoIds.length) return {};
 
     const url =
-        `${VIDEOS_API}?part=contentDetails&id=${videoIds.join(",")}&key=${YOUTUBE_CONFIG.API_KEY}`;
+        `${VIDEOS_API}?part=snippet,contentDetails&id=${videoIds.join(",")}&key=${YOUTUBE_CONFIG.API_KEY}`;
 
     const response = await fetch(url);
 
@@ -57,17 +57,29 @@ async function getDurations(videoIds: string[]) {
 
     const data = await response.json();
 
-    const durations: Record<string, string> = {};
+    const details: Record<
+        string,
+        {
+            duration: string;
+            publishedAt: string;
+        }
+    > = {};
 
     data.items.forEach((item: any) => {
 
-        durations[item.id] = formatDuration(
-            item.contentDetails.duration
-        );
+        details[item.id] = {
+
+            duration: formatDuration(
+                item.contentDetails.duration
+            ),
+
+            publishedAt: item.snippet.publishedAt
+
+        };
 
     });
 
-    return durations;
+    return details;
 
 }
 
@@ -121,13 +133,15 @@ async function getPlaylistVideos(
 
     );
 
-    const durations = await getDurations(ids);
+    const videoDetails = await getVideoDetails(ids);
 
     return validItems
 
         .map((item: any) => {
 
             const id = item.snippet.resourceId.videoId;
+
+            const details = videoDetails[id];
 
             return {
 
@@ -145,17 +159,31 @@ async function getPlaylistVideos(
 
                     item.snippet.thumbnails.default?.url,
 
-                publishedAt: item.snippet.publishedAt,
+                publishedAt:
+                    details?.publishedAt ??
+                    item.snippet.publishedAt,
 
                 category,
 
-                duration: durations[id] ?? "00:00",
+                duration:
+                    details?.duration ??
+                    "00:00",
 
                 url: `https://www.youtube.com/watch?v=${id}`
 
             };
 
         })
+
+        .sort(
+
+            (a, b) =>
+
+                new Date(b.publishedAt).getTime() -
+
+                new Date(a.publishedAt).getTime()
+
+        )
 
         .slice(0, maxResults);
 
