@@ -4,6 +4,9 @@ import type { YouTubeVideo } from "../types/youtube";
 const PLAYLIST_API =
     "https://www.googleapis.com/youtube/v3/playlistItems";
 
+const CHANNEL_API =
+    "https://www.googleapis.com/youtube/v3/channels";
+
 const VIDEOS_API =
     "https://www.googleapis.com/youtube/v3/videos";
 
@@ -69,7 +72,7 @@ async function getDurations(videoIds: string[]) {
 }
 
 /* ==========================================
-   PLAYLIST
+   BUSCA PLAYLIST
 ========================================== */
 
 async function getPlaylistVideos(
@@ -85,7 +88,7 @@ async function getPlaylistVideos(
     const url =
         `${PLAYLIST_API}?part=snippet` +
         `&playlistId=${playlistId}` +
-        `&maxResults=${maxResults}` +
+        `&maxResults=50` +
         `&key=${YOUTUBE_CONFIG.API_KEY}`;
 
     const response = await fetch(url);
@@ -100,7 +103,15 @@ async function getPlaylistVideos(
 
     const validItems = data.items.filter(
 
-        (item: any) => item.snippet?.resourceId?.videoId
+        (item: any) =>
+
+            item.snippet?.resourceId?.videoId &&
+
+            item.snippet?.title &&
+
+            item.snippet.title !== "Private video" &&
+
+            item.snippet.title !== "Private Video"
 
     );
 
@@ -112,37 +123,90 @@ async function getPlaylistVideos(
 
     const durations = await getDurations(ids);
 
-    return validItems.map((item: any) => {
+    return validItems
 
-        const id = item.snippet.resourceId.videoId;
+        .map((item: any) => {
 
-        return {
+            const id = item.snippet.resourceId.videoId;
 
-            videoId: id,
+            return {
 
-            title: item.snippet.title,
+                videoId: id,
 
-            description: item.snippet.description,
+                title: item.snippet.title,
 
-            thumbnail:
+                description: item.snippet.description,
 
-                item.snippet.thumbnails.high?.url ??
+                thumbnail:
 
-                item.snippet.thumbnails.medium?.url ??
+                    item.snippet.thumbnails.high?.url ??
 
-                item.snippet.thumbnails.default?.url,
+                    item.snippet.thumbnails.medium?.url ??
 
-            publishedAt: item.snippet.publishedAt,
+                    item.snippet.thumbnails.default?.url,
 
-            category,
+                publishedAt: item.snippet.publishedAt,
 
-            duration: durations[id] ?? "00:00",
+                category,
 
-            url: `https://www.youtube.com/watch?v=${id}`
+                duration: durations[id] ?? "00:00",
 
-        };
+                url: `https://www.youtube.com/watch?v=${id}`
 
-    });
+            };
+
+        })
+
+        .slice(0, maxResults);
+
+}
+
+/* ==========================================
+   BUSCA PLAYLIST DE UPLOADS DO CANAL
+========================================== */
+
+async function getUploadsPlaylistId(): Promise<string> {
+
+    const url =
+        `${CHANNEL_API}?part=contentDetails&id=${YOUTUBE_CONFIG.CHANNEL_ID}&key=${YOUTUBE_CONFIG.API_KEY}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+
+        throw new Error(await response.text());
+
+    }
+
+    const data = await response.json();
+
+    return data.items[0].contentDetails.relatedPlaylists.uploads;
+
+}
+
+/* ==========================================
+   BUSCA OS VÍDEOS MAIS RECENTES DO CANAL
+========================================== */
+
+async function getLatestVideos(
+
+    maxResults: number,
+
+    category: string
+
+): Promise<YouTubeVideo[]> {
+
+    const uploadsPlaylistId = await getUploadsPlaylistId();
+
+    return getPlaylistVideos(
+
+        uploadsPlaylistId,
+
+        maxResults,
+
+        category
+
+    );
 
 }
 
