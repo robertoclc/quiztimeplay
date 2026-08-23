@@ -38,24 +38,12 @@ function formatDuration(duration: string): string {
 
 /* ==========================================
    BUSCA DURAÇÕES E DATAS DE PUBLICAÇÃO
+   EM LOTES DE ATÉ 50 VÍDEOS
 ========================================== */
 
 async function getVideoDetails(videoIds: string[]) {
 
     if (!videoIds.length) return {};
-
-    const url =
-        `${VIDEOS_API}?part=snippet,contentDetails&id=${videoIds.join(",")}&key=${YOUTUBE_CONFIG.API_KEY}`;
-
-    const response = await fetch(url);
-
-    if (!response.ok) {
-
-        throw new Error(await response.text());
-
-    }
-
-    const data = await response.json();
 
     const details: Record<
         string,
@@ -65,19 +53,44 @@ async function getVideoDetails(videoIds: string[]) {
         }
     > = {};
 
-    data.items.forEach((item: any) => {
+    const batches: string[][] = [];
 
-        details[item.id] = {
+    for (let i = 0; i < videoIds.length; i += 50) {
 
-            duration: formatDuration(
-                item.contentDetails.duration
-            ),
+        batches.push(videoIds.slice(i, i + 50));
 
-            publishedAt: item.snippet.publishedAt
+    }
 
-        };
+    for (const batch of batches) {
 
-    });
+        const url =
+            `${VIDEOS_API}?part=snippet,contentDetails&id=${batch.join(",")}&key=${YOUTUBE_CONFIG.API_KEY}`;
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+
+            throw new Error(await response.text());
+
+        }
+
+        const data = await response.json();
+
+        data.items.forEach((item: any) => {
+
+            details[item.id] = {
+
+                duration: formatDuration(
+                    item.contentDetails.duration
+                ),
+
+                publishedAt: item.snippet.publishedAt
+
+            };
+
+        });
+
+    }
 
     return details;
 
@@ -91,29 +104,48 @@ async function getPlaylistVideos(
 
     playlistId: string,
 
-    maxResults: number,
+    maxResults: number | null,
 
     category: string
 
 ): Promise<YouTubeVideo[]> {
 
-    const url =
-        `${PLAYLIST_API}?part=snippet` +
-        `&playlistId=${playlistId}` +
-        `&maxResults=50` +
-        `&key=${YOUTUBE_CONFIG.API_KEY}`;
+    const items: any[] = [];
 
-    const response = await fetch(url);
+    let pageToken = "";
 
-    if (!response.ok) {
+    do {
 
-        throw new Error(await response.text());
+        const url =
+            `${PLAYLIST_API}?part=snippet` +
+            `&playlistId=${playlistId}` +
+            `&maxResults=50` +
+            `${pageToken ? `&pageToken=${pageToken}` : ""}` +
+            `&key=${YOUTUBE_CONFIG.API_KEY}`;
 
-    }
+        const response = await fetch(url);
 
-    const data = await response.json();
+        if (!response.ok) {
 
-    const validItems = data.items.filter(
+            throw new Error(await response.text());
+
+        }
+
+        const data = await response.json();
+
+        items.push(...data.items);
+
+        pageToken = data.nextPageToken ?? "";
+
+        if (maxResults !== null && items.length >= maxResults) {
+
+            break;
+
+        }
+
+    } while (pageToken);
+
+    const validItems = items.filter(
 
         (item: any) =>
 
@@ -135,7 +167,7 @@ async function getPlaylistVideos(
 
     const videoDetails = await getVideoDetails(ids);
 
-    return validItems
+    const videos = validItems
 
         .map((item: any) => {
 
@@ -177,15 +209,21 @@ async function getPlaylistVideos(
 
         .sort(
 
-    (a: YouTubeVideo, b: YouTubeVideo) =>
+            (a: YouTubeVideo, b: YouTubeVideo) =>
 
-        new Date(b.publishedAt).getTime() -
+                new Date(b.publishedAt).getTime() -
 
-        new Date(a.publishedAt).getTime()
+                new Date(a.publishedAt).getTime()
 
-)
+        );
 
-        .slice(0, maxResults);
+    if (maxResults === null) {
+
+        return videos;
+
+    }
+
+    return videos.slice(0, maxResults);
 
 }
 
@@ -275,5 +313,23 @@ export async function getHomeContent() {
         shorts
 
     };
+
+}
+
+/* ==========================================
+   TODOS OS QUIZZES
+========================================== */
+
+export async function getAllQuizVideos() {
+
+    return getPlaylistVideos(
+
+        YOUTUBE_CONFIG.VIDEOS_PLAYLIST,
+
+        null,
+
+        "Quiz"
+
+    );
 
 }

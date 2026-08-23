@@ -4,9 +4,10 @@ import Header from "../components/Header.astro";
 import HomeVideos from "../components/HomeVideos.astro";
 import HomeShorts from "../components/HomeShorts.astro";
 import Footer from "../components/Footer.astro";
-import { getHomeContent } from "../services/youtube";
+import { getHomeContent, getAllQuizVideos } from "../services/youtube";
 
-const { videos, shorts } = await getHomeContent();
+const { shorts } = await getHomeContent();
+const videos = await getAllQuizVideos();
 ---
 
 <Layout
