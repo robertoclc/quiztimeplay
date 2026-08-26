@@ -22,7 +22,8 @@ const { videos }: Props = Astro.props;
     <div class="container">
 
         <div class="hero-proof">
-            🎯 Mais de 560 quizzes publicados para testar seus conhecimentos.        </div>
+            🎯 Mais de 560 quizzes publicados para testar seus conhecimentos.
+        </div>
 
         <h2 class="section-title">
             🔥 Escolha um Quiz e Teste Seus Conhecimentos
@@ -85,9 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
         !(grid instanceof HTMLElement)
     ) return;
 
+    const normalizar = (texto) => {
+
+        return texto
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
+    };
+
     input.addEventListener("input", () => {
 
-        const texto = input.value.toLowerCase().trim();
+        const texto = normalizar(input.value);
 
         let encontrados = 0;
 
@@ -95,10 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!(card instanceof HTMLElement)) return;
 
-            const titulo =
-                card.querySelector("h3")?.textContent?.toLowerCase() ?? "";
+            const conteudo = normalizar(card.textContent ?? "");
 
-            const mostrar = titulo.includes(texto);
+            const mostrar =
+                texto === "" ||
+                conteudo.includes(texto);
 
             card.style.display = mostrar ? "flex" : "none";
 
@@ -106,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-        if (encontrados === 0) {
+        if (encontrados === 0 && texto !== "") {
 
             grid.style.display = "none";
             noResults.style.display = "block";
