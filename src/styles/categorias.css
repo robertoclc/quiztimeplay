@@ -4,7 +4,7 @@
 
 .hero{
 
-    padding:45px 0;
+    padding:25px 0 30px; /* Reduzido para ocupar menos espaço vertical */
 
     background:
         radial-gradient(circle at top right,#3b82f633 0%,transparent 35%),
@@ -20,9 +20,9 @@
 
 .hero h1{
 
-    font-size:42px;
+    font-size:36px; /* Ajustado sutilmente para compactar melhor */
 
-    margin-bottom:18px;
+    margin-bottom:12px;
 
 }
 
@@ -32,9 +32,9 @@
 
     margin:auto;
 
-    font-size:18px;
+    font-size:16px;
 
-    line-height:1.6;
+    line-height:1.5;
 
     color:#dbeafe;
 
@@ -46,7 +46,7 @@
 
 .categories{
 
-    padding:45px 0;
+    padding:30px 0 45px; /* Reduzido o espaço superior da grade */
 
 }
 
@@ -106,7 +106,8 @@
 
     aspect-ratio:16/9;
 
-    object-fit:cover;
+    object-fit:cover; /* Garante que preencha o espaço mantendo a proporção de vídeo do YouTube */
+    object-position:center; /* Centraliza a imagem para evitar cortes nas bordas importantes */
 
     display:block;
 
