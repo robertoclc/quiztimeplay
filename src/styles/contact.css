@@ -1,149 +1,89 @@
 /* ==========================================
-   CONTATO
+   CONTATO COMPACTO (Foco em mostrar o rodapé)
 ========================================== */
 
 .hero-contact{
-
-    padding:18px 20px 10px;
-
-    text-align:center;
-
+    padding: 8px 20px 4px;
+    text-align: center;
 }
 
 .hero-contact .badge{
-
-    display:inline-block;
-
-    margin-bottom:8px;
-
+    display: inline-block;
+    margin-bottom: 4px;
 }
 
 .hero-contact h1{
-
-    font-size:40px;
-
-    line-height:1.1;
-
-    margin:0 0 10px;
-
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 0 0 4px;
 }
 
 .hero-contact p{
-
-    font-size:18px;
-
-    color:#cbd5e1;
-
-    max-width:700px;
-
-    margin:auto;
-
+    font-size: 14px;
+    color: #cbd5e1;
+    max-width: 650px;
+    margin: auto;
 }
 
 .contact{
-
-    padding:15px 20px 30px;
-
+    padding: 8px 20px 15px;
 }
 
 .cards{
-
-    max-width:900px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
 .card{
-
-    background:#1f2937;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    padding:22px;
-
-    text-align:center;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.22);
-
+    background: #1f2937;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,.22);
 }
 
 .emoji{
-
-    font-size:34px;
-
-    margin-bottom:8px;
-
+    font-size: 26px;
+    margin-bottom: 4px;
 }
 
 .card h2{
-
-    color:#fff;
-
-    font-size:24px;
-
-    margin:10px 0;
-
+    color: #fff;
+    font-size: 19px;
+    margin: 4px 0;
 }
 
 .card p{
-
-    color:#cbd5e1;
-
-    font-size:17px;
-
-    line-height:1.45;
-
-    margin:8px 0 15px;
-
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.35;
+    margin: 4px 0 10px;
 }
 
 .email{
-
-    color:#60a5fa !important;
-
-    font-size:20px !important;
-
-    font-weight:700;
-
-    word-break:break-word;
-
+    color: #60a5fa !important;
+    font-size: 16px !important;
+    font-weight: 700;
+    word-break: break-word;
 }
 
 .contact .btn{
-
-    display:inline-block;
-
-    padding:14px 28px;
-
-    background:#2563eb;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:10px;
-
-    font-size:17px;
-
-    font-weight:700;
-
-    transition:.25s;
-
+    display: inline-block;
+    padding: 9px 20px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .25s;
 }
 
 .contact .btn:hover{
-
-    background:#1d4ed8;
-
-    transform:translateY(-2px);
-
+    background: #1d4ed8;
+    transform: translateY(-2px);
 }
