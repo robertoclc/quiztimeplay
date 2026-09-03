@@ -25,8 +25,97 @@ const { videos }: Props = Astro.props;
             ⚡ Shorts do Quiz Time
         </h2>
 
-        <VideoGrid videos={videos} />
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchShorts"
+                placeholder="🔍 Pesquise um Short..."
+            />
+        </div>
+
+        <div id="shortsGridContainer">
+            <VideoGrid videos={videos} />
+        </div>
+
+        <div id="noShortsResults" class="no-results">
+            <h3>🔍 Nenhum Short encontrado</h3>
+            <p>Tente pesquisar outro título.</p>
+
+            <button
+                id="showAllShorts"
+                class="watch-button"
+                type="button"
+            >
+                ⚡ Ver todos os Shorts
+            </button>
+        </div>
 
     </div>
 
 </section>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const input = document.getElementById("searchShorts");
+    const noResults = document.getElementById("noShortsResults");
+    const showAll = document.getElementById("showAllShorts");
+    const grid = document.getElementById("shortsGridContainer");
+
+    if (
+        !(input instanceof HTMLInputElement) ||
+        !(noResults instanceof HTMLElement) ||
+        !(showAll instanceof HTMLButtonElement) ||
+        !(grid instanceof HTMLElement)
+    ) return;
+
+    input.addEventListener("input", () => {
+
+        const texto = input.value.toLowerCase().trim();
+        let encontrados = 0;
+
+        document.querySelectorAll(".video-card").forEach((card) => {
+
+            if (!(card instanceof HTMLElement)) return;
+
+            const titulo =
+                card.querySelector("h3")?.textContent?.toLowerCase() ?? "";
+
+            const mostrar = titulo.includes(texto);
+
+            card.style.display = mostrar ? "flex" : "none";
+
+            if (mostrar) encontrados++;
+
+        });
+
+        if (encontrados === 0) {
+            grid.style.display = "none";
+            noResults.style.display = "block";
+        } else {
+            grid.style.display = "block";
+            noResults.style.display = "none";
+        }
+
+    });
+
+    showAll.addEventListener("click", () => {
+
+        input.value = "";
+
+        document.querySelectorAll(".video-card").forEach((card) => {
+
+            if (!(card instanceof HTMLElement)) return;
+
+            card.style.display = "flex";
+
+        });
+
+        grid.style.display = "block";
+        noResults.style.display = "none";
+        input.focus();
+
+    });
+
+});
+</script>
