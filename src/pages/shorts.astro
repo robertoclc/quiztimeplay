@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HomeShorts from "../components/HomeShorts.astro";
+import Footer from "../components/Footer.astro";
+import { getAllShorts } from "../services/youtube";
+
+const shorts = await getAllShorts();
+---
+
+<Layout
+  title="Shorts | QuizTimePlay"
+  description="Assista aos Shorts do canal Quiz Time - Teste Seus Conhecimentos."
+  canonical="https://quiztimeplay.com.br/shorts"
+>
+  <Header />
+
+  <main>
+    <HomeShorts videos={shorts} />
+  </main>
+
+  <Footer />
+</Layout>

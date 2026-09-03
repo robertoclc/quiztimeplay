@@ -333,3 +333,21 @@ export async function getAllQuizVideos() {
     );
 
 }
+
+/* ==========================================
+   TODOS OS SHORTS
+========================================== */
+
+export async function getAllShorts() {
+
+    return getPlaylistVideos(
+
+        YOUTUBE_CONFIG.SHORTS_PLAYLIST,
+
+        null,
+
+        "Short"
+
+    );
+
+}

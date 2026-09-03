@@ -1,0 +1,190 @@
+---
+---
+
+<section id="home-videos">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            🎯 Quizzes e Shorts
+        </h2>
+
+        <div 
+            id="home-video-grid" 
+            class="video-grid home-video-grid">
+            <p>Carregando vídeos...</p>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    interface Video {
+        title: string;
+        thumbnail: string;
+        category: string;
+        duration: string;
+        publishedAt: string;
+        url: string;
+    }
+
+    interface YouTubeData {
+        quizzes: Video[];
+        shorts: Video[];
+        updatedAt: string;
+    }
+
+    async function loadVideos() {
+
+        const container =
+            document.getElementById("home-video-grid");
+
+        if (!container) return;
+
+        try {
+
+            const response =
+                await fetch("/api/youtube");
+
+            if (!response.ok) {
+                throw new Error("Erro ao carregar vídeos");
+            }
+
+            const data: YouTubeData =
+                await response.json();
+
+            const videos = [
+                ...data.quizzes,
+                ...data.shorts
+            ].sort(
+                (a, b) =>
+                    new Date(b.publishedAt).getTime() -
+                    new Date(a.publishedAt).getTime()
+            );
+
+            container.innerHTML = "";
+
+            videos.forEach((video) => {
+
+                const publishedDate =
+                    new Date(video.publishedAt);
+
+                const today = new Date();
+
+                const diffDays = Math.floor(
+                    (
+                        today.getTime() -
+                        publishedDate.getTime()
+                    ) /
+                    (1000 * 60 * 60 * 24)
+                );
+
+                const isNew = diffDays <= 7;
+
+                const card =
+                    document.createElement("a");
+
+                card.className = "video-card home-video-card";
+
+                card.href = video.url;
+                card.target = "_blank";
+                card.rel = "noopener noreferrer";
+
+                card.innerHTML = `
+                    <div class="thumb">
+
+                        <img
+                            src="${video.thumbnail}"
+                            alt=""
+                            width="480"
+                            height="360"
+                            loading="lazy"
+                            decoding="async"
+                        />
+
+                        ${
+                            isNew
+                                ? `<span class="badge new">🆕 NOVO</span>`
+                                : ""
+                        }
+
+                        <span class="video-duration">
+                            ${video.duration}
+                        </span>
+
+                    </div>
+
+                    <div class="info">
+
+                        <span class="category">
+                            ${video.category}
+                        </span>
+
+                        <h3>
+                            ${video.title}
+                        </h3>
+
+                        <span class="watch-button">
+                            ▶ Assistir no YouTube
+                        </span>
+
+                    </div>
+                `;
+
+                container.appendChild(card);
+
+            });
+
+        } catch (error) {
+
+            console.error(error);
+
+            container.innerHTML =
+                "<p>Não foi possível carregar os vídeos.</p>";
+
+        }
+
+    }
+
+    loadVideos();
+</script>
+
+<style is:global>
+
+    #home-video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+        width: 100%;
+    }
+
+    #home-video-grid .home-video-card {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    #home-video-grid .home-video-card .thumb {
+        width: 100%;
+    }
+
+    #home-video-grid .home-video-card .thumb img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    @media (max-width: 1000px) {
+        #home-video-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 768px) {
+        #home-video-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
