@@ -1,16 +1,24 @@
 /* ===========================================================
+
    TABLETS
+
 =========================================================== */
+
+.menu-toggle{
+    display:none;
+}
 
 @media (max-width:900px){
 
 /* HEADER */
 
 nav{
-    flex-direction:column;
-    justify-content:center;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
     height:auto;
     padding:16px 0;
+    position:relative;
 }
 
 .logo{
@@ -22,16 +30,50 @@ nav{
     height:48px;
 }
 
+/* BOTÃO MENU */
+
+.menu-toggle{
+    display:block;
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:32px;
+    line-height:1;
+    cursor:pointer;
+    padding:6px 10px;
+}
+
+/* MENU */
+
 .menu{
-    margin-top:16px;
-    display:grid;
-    grid-template-columns:repeat(2,auto);
-    gap:14px 28px;
-    justify-content:center;
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    width:220px;
+    margin-top:8px;
+    padding:14px;
+    background:#1e293b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    box-shadow:0 12px 28px rgba(0,0,0,.28);
+    z-index:1000;
+}
+
+.menu.menu-open{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
 }
 
 .menu a{
     font-size:18px;
+    padding:12px 14px;
+    border-radius:8px;
+}
+
+.menu a:hover{
+    background:rgba(255,255,255,.08);
 }
 
 /* HERO */
@@ -135,7 +177,9 @@ nav{
 
 
 /* ===========================================================
+
    CELULARES
+
 =========================================================== */
 
 @media (max-width:600px){
@@ -156,19 +200,25 @@ nav{
     height:40px;
 }
 
+.menu-toggle{
+    font-size:28px;
+    padding:5px 8px;
+}
+
 .menu{
-    margin-top:14px;
-    gap:10px 24px;
+    width:200px;
+    margin-top:6px;
 }
 
 .menu a{
     font-size:16px;
+    padding:11px 12px;
 }
 
 /* HERO */
 
 .hero{
-     padding:8px 0 4px;
+    padding:8px 0 4px;
 }
 
 .hero-content{

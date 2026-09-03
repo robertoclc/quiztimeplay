@@ -19,7 +19,17 @@
 
             </a>
 
-            <div class="menu">
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <div class="menu" id="mainMenu">
 
                 <a href="/">Início</a>
 
@@ -38,3 +48,44 @@
     </div>
 
 </header>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("mainMenu");
+
+    if (
+        !(toggle instanceof HTMLButtonElement) ||
+        !(menu instanceof HTMLElement)
+    ) return;
+
+    toggle.addEventListener("click", () => {
+
+        const aberto = menu.classList.toggle("menu-open");
+
+        toggle.setAttribute("aria-expanded", String(aberto));
+
+        toggle.setAttribute(
+            "aria-label",
+            aberto ? "Fechar menu" : "Abrir menu"
+        );
+
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            menu.classList.remove("menu-open");
+
+            toggle.setAttribute("aria-expanded", "false");
+
+            toggle.setAttribute("aria-label", "Abrir menu");
+
+        });
+
+    });
+
+});
+</script>
