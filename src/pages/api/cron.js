@@ -23,18 +23,28 @@ export async function POST({ request }) {
   try {
     const cache = caches.default;
 
-    await cache.delete(
+    const cacheDeleted = await cache.delete(
       "https://cache.youtube/all-content"
     );
 
     console.log(
-      "Cache do YouTube limpo:",
+      "Resultado da limpeza do cache:",
+      cacheDeleted ? "Cache removido" : "Chave não encontrada"
+    );
+
+    console.log(
+      "Limpeza executada em:",
       new Date().toISOString()
     );
 
-    return new Response("Cache do YouTube limpo", {
-      status: 200,
-    });
+    return new Response(
+      cacheDeleted
+        ? "Cache do YouTube removido com sucesso"
+        : "Nenhum cache encontrado para remover",
+      {
+        status: 200,
+      }
+    );
   } catch (error) {
     console.error("Erro ao limpar cache:", error);
 
